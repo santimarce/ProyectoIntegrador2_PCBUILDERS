@@ -1,0 +1,1088 @@
+/* Todo el encabezado */
+#botonbuscar{
+    background: black;
+    color: white;
+    border: 6px groove rgb(151, 133, 216);
+    border-radius: 6px;
+}
+a{
+    text-decoration: none !important;
+}
+.navbar{
+    background: linear-gradient(150deg, purple 20%, red, orange 65%, yellow , green, blue);    
+}
+.nav-item:hover{
+    background-color: black;
+    border-radius: 6px;
+    border: 1px groove rgb(151, 133, 216);
+}
+#navopcion{
+    color: white;
+}
+.dropdown-menu{
+    background: black;    
+    color: white;
+}
+.dropdown-item{
+    background: black;    
+    color: white;
+}
+
+/* Para el index.html */
+#carruselimg{
+    height: 500px;
+    width: 80px;
+    padding: 5px 5px 5px 5px;
+    background-color: black;
+}
+
+.esteban{
+    padding: 10px;
+    background-image: url(../img/fondoindex.jpg);
+}
+
+.row{
+    margin: 3px solid black;
+}
+
+.dirigida{
+    text-decoration: none;
+    color: white;
+}
+
+.dirigida1{
+    text-decoration: none;
+    color: black;
+}
+.esteban1{
+    width: auto;
+    max-width: 1390px;
+    margin: auto;
+    display: flex;
+    grid-template-columns: 900px 400px;
+    grid-gap: 50px;
+    margin-top: 20px;
+}
+
+.tipo-letra{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*linear-gradient(180deg, rgba(white, .15), rgba(white, 0))*/
+/* nuevop*/
+.espacios1{
+    width: 5px;
+    height: 50px;
+}
+.espacios{
+    width: 5px;
+    height: 40px;
+}
+.body2{
+    padding: 30px;
+    padding-left: 40px;
+}
+.card-title{
+    text-align: center;
+}
+.card-subtitle{
+    text-align: center;
+}
+#card-img-top{
+    width: 285px;
+    height: 250px;
+}
+#cardsub10{
+    width: 18rem;
+    box-shadow: 0 10px 30px rgba(255, 1, 1, 0.705), 0 10px 80px rgba(255, 1, 1, 0.705);
+}
+#cardsub11{
+    width: 18rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.705), 0 5px 10px rgba(3, 3, 3, 0.705);
+}
+.card:hover{
+    transform: scale(1.05);
+}
+.body1{
+    padding: 30px;
+    padding-left: 90px;
+}
+.card-subtitle1{
+    text-align: center;
+}
+#card-img-top1{
+    width: 285px;
+    height: 250px;
+}
+.body3{
+    padding: 30px;
+    padding-left: 40px;
+}
+.breadcrumbs .items > li {
+    display: inline-block;
+    font-size: 1.4rem;
+}
+.btn-success2{
+    color: rgb(255, 217, 0);
+    background-color: rgba(88, 19, 153, 0.781);
+}
+.product-flags {
+    display: flex;
+    flex-wrap: wrap;
+    left: 0;
+    margin: 4px 3px;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.product-flag span {
+    background: #007ad1;
+    border-radius: 3px;
+    color: #fff;
+    padding: 2px 5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.elementor-widget-wrap {
+    position: relative;
+    width: 100%;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+}
+.tituloxdxd{
+    color: red;
+}
+
+/* call center */
+
+.titulocall{
+    padding-left: 10px; 
+    padding-right: 60px;
+    color: rgb(245, 232, 59);
+    font-size: 25px;
+}
+.titulocall2{
+    padding-left: 10px;
+    padding-right: 40px;
+    max-height: 500px;
+    color: rgb(245, 232, 59);
+    font-size: 20px;
+}
+.titulocall3{
+    padding-left: 5px;
+    padding-right: 40px;
+    max-height: 500px;
+    color: white;
+    font-size: 27px;
+}
+.bodys{
+    padding: 30px;
+    padding-left: 40px;
+}
+.formulario2{
+    background: url(../img/fondo.jpg)no-repeat 0px 0px;
+    background-size: cover;
+    background-position: center;
+    padding: 30px 33px 67px;
+    border-top: 6px solid red;
+    box-shadow: 0px 35px 44px -22px blue;
+}
+.col-md-9{
+    padding-bottom: 20px;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+.card-header{
+    color: rgb(255, 0, 0);
+
+}
+.form-label1{
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+#titulo-contacto1 {
+    text-align: right;
+    text-transform: uppercase;
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.text-black {
+    --tw-text-opacity: 1;
+    color: rgba(0,37,64,var(--tw-text-opacity));
+}
+.leading-normal {
+    line-height: 1.5;
+}
+.text-xl {
+    font-size: 1.25rem;
+}
+.font-poppins {
+    font-family: Open Sans,sans-serif;
+}
+.card-img-top-contact{
+    width: 150px;
+    height: 150px;
+}
+#googlemap{
+    height: 400px;
+    width: 530px;
+}
+.tituloctc-final{
+    text-align: center;
+    text-transform: uppercase;
+}
+.areatexto{
+    height: 200px;
+    width: 424px;
+}
+.cuerpo1 {
+    border-radius: 5%;
+    max-height: 400px;
+    margin: 0;
+    padding: 0;
+    background: url(../img/callcenter.PNG) no-repeat center top;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: sans-serif;
+    height: 140vh;
+    box-shadow: 0 5px 10px rgba(18, 5, 138, 0.705), 0 5px 10px rgba(3, 3, 3, 0.705);
+}
+#titulo-contacto3 {
+    text-align: left;
+    text-transform: uppercase;
+    color: rgb(8, 69, 148);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#titulo-contacto4 {
+    text-align: left;
+    color: rgb(8, 69, 148);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.btn-enviar{
+    background-color: rgb(60, 101, 233);
+}
+
+
+/* catalogo*/
+.catalogo{
+    margin: auto;
+    display: block;
+    width: 750px;
+    height: 90vh;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(18, 5, 138, 0.705), 0 5px 20px rgba(219, 0, 0, 0.705);
+}
+.contenido{
+    color: rgb(8, 69, 148);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+.titulonc{
+    color: rgb(185, 131, 14);
+}
+/* Pie de pagina  */
+footer{
+    width: 100%;
+    background: rgb(32, 32, 32);
+    color: white;
+}
+.container-footer-all{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px;
+}
+.container-body{
+    display: flex;
+    justify-content: space-between;
+}
+.colum1{
+    max-width: 400px;
+}
+.colum1 h1{
+    font-size: 22px;
+}
+.colum p{
+    font-size: 14px;
+    color: aquamarine;
+    margin-top: 20px;
+}
+.colum2{
+    max-width: 400px;
+}
+.colum2 h1{
+    font-size: 22px;
+}
+.colum2 .row{
+    margin-top: 20px;
+    display: flex;
+}
+.row-img1{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 12px;
+}
+.row-label-a{
+    margin-top: 10px;
+    margin-left: 10px;
+    color: white;
+}
+#textopie{
+    font-style: normal;
+}
+.colum3{
+    max-width: 400px;
+}
+.colum3 h1{
+    font-size: 22px;
+}
+.row2{
+    margin-top: 20px;
+    display: flex;
+}
+.row2 img{
+    width: 50pxpx;
+    height: 50px;
+    background-color: white;
+    border-radius: 13px;
+}
+.row2 label{
+    margin-top: 14px;
+    margin-left: 20px;
+    max-width: 140px;
+}
+.container-footer{
+    width: 100%;
+    background: black;
+}
+.footer{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.copyright{
+    color: aqua;
+}
+.copyright a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+.information{
+    text-decoration: none;
+    color: rgb(138, 130, 130);
+}
+
+/* Contactanos */
+#card-contacto{
+    border-width: 5px;
+    box-shadow:  inset 0 -1em 4em black;
+    border-color: rgb(0, 0, 0);
+    border-radius: 5%;
+    background-color:rgb(228, 93, 255) ;
+    align-items: center;
+    padding: 10px;
+}
+#titulo-contacto{
+    text-align: center;
+    text-transform: uppercase;
+    color: black;    
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.card-img-top-contact{
+    width: 150px;
+    height: 150px;
+}
+#googlemap{
+    height: 400px;
+    width: 530px;
+}
+.tituloctc-final{
+    text-align: center;
+    text-transform: uppercase;
+}
+.areatexto{
+    height: 200px;
+    width: 424px;
+}
+/*linear-gradient(180deg, rgba(white, .15), rgba(white, 0))*/
+/* productos y servicios */
+.espacios1{
+    width: 5px;
+    height: 50px;
+}
+.espacios{
+    width: 5px;
+    height: 40px;
+}
+.body2{
+    padding: 30px;
+    padding-left: 40px;
+}
+.card-title{
+    text-align: center;
+}
+.card-subtitle{
+    text-align: center;
+}
+#card-img-top{
+    width: 285px;
+    height: 250px;
+}
+#cardsub{
+    width: 18rem;
+    box-shadow: 0 10px 30px rgba(255, 1, 221, 0.466), 0 10px 80px rgba(255, 1, 221, 0.466);
+}
+#cardsub2{
+    width: 18rem;
+    box-shadow: 0 10px 30px rgba(255, 1, 1, 0.658), 0 10px 50px rgba(255, 1, 1, 0.658);
+}
+#cardsub3{
+    width: 18rem;
+    box-shadow: 0 10px 30px rgba(248, 244, 11, 0.534), 0 10px 80px rgba(248, 244, 11, 0.534);
+}
+#cardsub4{
+    width: 18rem;
+    box-shadow: 0 10px 30px rgba(11, 240, 248, 0.534), 0 10px 40px rgba(11, 240, 248, 0.534);
+}
+#cardsub5{
+    width: 18rem;
+    box-shadow: 0 10px 30px rgba(107, 5, 223, 0.63), 0 10px 40px rgba(107, 5, 223, 0.63);
+}
+#cardsub6{
+    width: 18rem;
+    box-shadow: 0 10px 30px rgba(223, 129, 5, 0.774), 0 10px 40px rgba(223, 129, 5, 0.774);
+}
+.card:hover{
+    transform: scale(1.05);
+}
+.body1{
+    padding: 30px;
+    padding-left: 90px;
+}
+.card-subtitle1{
+    text-align: center;
+}
+#card-img-top1{
+    width: 285px;
+    height: 250px;
+}
+#cardsub1{
+    width: 18rem;
+    box-shadow: 0 10px 30px rgba(1, 255, 22, 0.596), 0 10px 80px rgba(1, 255, 22, 0.596);
+}
+.body3{
+    padding: 30px;
+    padding-left: 40px;
+}
+.breadcrumbs .items > li {
+    display: inline-block;
+    font-size: 1.4rem;
+}
+.breadcrumbs {
+    min-height: 40px;
+}
+.breadcrumbs{
+    display: inline-block;
+    padding: 0 5px;
+}
+
+.col-md-12.titularComo {
+    text-align: center;
+    padding: 20px;
+    color: rgb(20, 20, 20);
+}
+.titularComo h3 {
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+.titularComo h2 b {
+    color: #224e96;
+    font-size: 24px;
+}
+
+.body5{
+    padding: 30px;
+    padding-left: 90px;
+}
+.cuadro {
+    text-align: center;
+}
+.cuadroComo {
+    background-color: white;
+    text-align: center;
+    width: 350px;
+    border: 2px solid #b2c8c9;
+    border-radius: 1px;
+}
+.cuadroComo:hover{
+    transform: scale(1.10);
+}
+.cuadroComo h3{
+    color: red;
+}
+.cuadroComo b {
+    color: rgb(255, 4, 4);
+}
+
+.cuadroComo b {
+    background: #e32913;
+    color: #FFF;
+    margin: auto;
+    font-size: 25px;
+    padding: 3px 12px;
+    border-radius: 50%;
+}
+
+.col-md-9{
+    padding-bottom: 20px;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+.bodys{
+    padding: 30px;
+    padding-left: 40px;
+}
+.formulario2{
+    background: url(../img/fondo.jpg)no-repeat 0px 0px;
+    background-size: cover;
+    background-position: center;
+    padding: 30px 33px 67px;
+    border-top: 6px solid red;
+    box-shadow: 0px 35px 44px -22px blue;
+}
+.card-header{
+    color: rgb(255, 0, 0);
+
+}
+.form-label1{
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+
+/* login */
+
+.cuerpo {
+    margin: 0;
+    padding: 0;
+    background: url(../img/bg.jpeg) no-repeat center top;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: sans-serif;
+    height: 140vh;
+}
+
+.contenedor-login {
+    width: 320px;
+    height: 420px;
+    background: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+.logito {
+    width: 150px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: 85px
+}
+
+.contenedor-login h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+    color: white;
+}
+
+.contenedor-login label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+    color: white;
+}
+
+.contenedor-login input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.contenedor-login input[type="text"],
+.contenedor-login input[type="password"] {
+    border: none;
+    border-bottom: 1px solid white;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+}
+
+.contenedor-login input[type="button"] {
+    border: solid 2px white;
+    outline: none;
+    height: 40px;
+    background: transparent;
+    font-size: 18px;
+    border-radius: 20px;
+    color: white;
+    transition: all 500ms;
+}
+
+.contenedor-login input[type="button"]:hover {
+    background-color: white;
+    color: black;
+}
+
+.contenedor-login a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+    text-align: justify;
+}
+
+.contenedor-login a:hover {
+    color: white;
+}
+
+.footer-login {
+    top: 103vh;
+    position: relative;
+}
+
+
+/* registro */
+.contenedor-reg {
+    width: 500px;
+    height: 980px;
+    background: rgb(0, 0, 0);
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+.logito2 {
+    width: 200px;
+    height: 140px;
+    border-radius: 50%;
+    position: absolute;
+    top: -75px;
+    left: 150px;
+    border: solid 1.5px black;
+}
+
+.contenedor-reg h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+}
+
+.contenedor-reg label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+    color: rgb(255, 255, 255);
+}
+
+.contenedor-reg input[type="text"],
+.contenedor-reg input[type="password"],
+.contenedor-reg input[type="date"],
+.contenedor-reg input[type="number"] {
+    border: none;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.contenedor-reg input[type="button"] {
+    border: solid 2px white;
+    outline: none;
+    height: 40px;
+    background: transparent;
+    font-size: 18px;
+    border-radius: 20px;
+    color: white;
+    transition: all 500ms;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.contenedor-reg input[type="button"]:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.terms p {
+    color: white;
+}
+
+.footer-reg {
+    position: relative;
+    top: 140vh
+}
+
+/* dashboard */
+#grid-dash{
+    background: black;
+    border-radius: 2%;
+    box-shadow: 0 10px 30px rgba(1, 255, 22, 0.596), 0 10px 80px rgba(1, 255, 22, 0.596);
+}
+.nav-link1{
+    text-decoration: none;
+    color: black;
+}
+.nav-link1:hover{
+    color: white;
+}
+/* cuenta1 */
+
+.cuenta-fondo{
+    padding: 10px;
+    background-image: url(../img/fondo\ de\ usuario.jpeg);
+}
+
+.decorado{    
+    border: 2px solid rgb(29, 176, 212);    
+}
+
+.decorado2{
+    border-left: rgb(29, 176, 212) 2px solid;
+}
+
+/* ofertas! */
+
+#cardsub-oferta{
+    width: 18rem;
+    box-shadow: 0 10px 30px rgb(255, 1, 1), 0 10px 50px rgb(255, 1, 1);
+}
+
+/* armar */
+
+.esteban2{
+    width: auto;
+    max-width: 1590px;
+    margin: auto;
+    display: flex;
+    grid-template-columns: 900px 400px;
+    grid-gap: 50px;
+    margin-top: 20px;
+}
+
+.esteban3{
+    padding: 10px;
+    border: 2px solid #ccc; 
+    box-shadow: 0 5px 10px rgb(1, 238, 255), 0 20px 20px rgb(247, 3, 3);
+}
+
+.esteban4{
+    padding: 10px;
+    border: 2px solid white; 
+}
+/*compras*/
+
+table {
+    position: absolute;
+    top: 250px;
+}
+
+th {
+    color: red;
+    font-size: 20px;
+}
+
+tr {
+    color: rgb(255, 255, 255);
+    align-items: center;
+    text-shadow: 1px 1px gray;
+    text-align: center;
+    font-size: 19px;
+}
+
+.enca h1 {
+    color: red;
+    text-shadow: 1px 1px white;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.enca h6 {
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px gray;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.enca {
+    padding-top: 100px;
+    border-spacing: 10px;
+}
+
+.fondo {
+    margin: 0;
+    padding: 0;
+    background: url(../img/bg.jpeg) no-repeat center top;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: sans-serif;
+    height: 100vh;
+}
+
+.agra {
+    padding-top: 350px;
+}
+
+.agra h1 {
+    text-align: center;
+    font-size: auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: red;
+    text-shadow: 1px 1px white;
+}
+
+.footer-compras {
+    position: relative;
+    top: 10vh
+}
+
+/*pedidos*/
+
+.enca-p {
+    padding-top: 100px;
+    border-spacing: 10px;
+}
+
+.enca-p h1 {
+    color: red;
+    text-align: center;
+    text-shadow: 1px 1px white;
+    font-size: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.enca-p h6 {
+    color: rgb(240, 240, 240);
+    text-align: center;
+    text-shadow: 1px 1px gray;
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* configuracion */
+.inputcf {
+    border: none;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    background: transparent;
+    outline: auto;
+    height: 40px;
+    width: 400px;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+}
+.etiquetacf{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+    color: rgb(255, 255, 255);
+}
+/*login Admin*/
+
+.cuerpo2 {
+    margin: 0;
+    padding: 0;
+    background: url(../img/fondoo.jpg) no-repeat center top;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: sans-serif;
+    height: 140vh;
+}
+
+.contenedor-loginAd {
+    width: 320px;
+    height: 380px;
+    background: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+.logito {
+    width: 150px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: 85px
+}
+
+.contenedor-loginAd h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+    color: white;
+}
+
+.contenedor-loginAd label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+    color: white;
+}
+
+.contenedor-loginAd input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.contenedor-loginAd input[type="text"],
+.contenedor-loginAd input[type="password"] {
+    border: none;
+    border-bottom: 1px solid white;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+}
+
+.contenedor-loginAd input[type="button"] {
+    border: solid 2px white;
+    outline: none;
+    height: 40px;
+    background: transparent;
+    font-size: 18px;
+    border-radius: 20px;
+    color: white;
+    transition: all 500ms;
+}
+
+.contenedor-loginAd input[type="button"]:hover {
+    background-color: white;
+    color: black;
+}
+/* Config Admin   */
+.lateral{
+    border: solid 2px white;
+    outline: none;
+    height: 40px;
+    background: transparent;
+    font-size: 18px;
+    border-radius: 20px;
+    color: white;
+    transition: all 500ms;
+    text-align: center;
+}
+.lateral:hover{
+    background-color: white;
+    color: black;
+    cursor: grab;
+}
+/*  ingreso pedidos  */
+.ingresopedidos{
+    border: 5px dashed white;
+    background:rgb(0, 0, 0);
+    color: white;
+    width: 80%;
+    min-height: 400px;
+    position: sticky;
+    left: 10%;
+}
+.ingpedidosdentro{
+    border: 5px dashed white;
+    background:transparent;
+    color: white;
+    width: 25%;
+    min-height: 200px;
+    position: sticky;
+    left: 2px;
+    top: 2px;
+    align-items: center;
+    text-align: center;
+}
+.ingpedidosdentro2{
+    border: 5px dashed white;
+    background:transparent;
+    color: white;
+    width: 75%;
+    min-height: 200px;
+    position: sticky;
+    text-align: center;
+}
+.ingpedidosdentro input{
+    width: 100%;
+    margin-bottom: 20px;
+    position: sticky;
+}
+.ingpedidosdentro label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+    color: white;
+}
+
+.ingpedidosdentro2 input{
+    width: 30%;
+    margin: 2px;
+    display: inline-table;
+}
+.ingpedidosdentro2 select{
+    width: 30%;
+    margin: 2px;
+    display: inline-table;
+}
+.ingpedidosdentro2 input[type="button"]{
+    width: 25%;
+    padding: 5px;
+    margin: 2px;
+    background-color: black;
+    border: 3px groove white;
+    color: white;
+}
+.ingpedidosdentro2 label {
+    margin: 0;
+    padding: 0;
+    left: 2px;
+    right: 2px;
+    font-weight: bold;
+    display: inline-table;
+    color: white;
+}

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Integrador</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    </div>
+    <div class="cabecera">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+                <div class="container">
+                    <a class="navbar-brand" href="../index.html"><img src="img/logo.png" alt="" width="150"
+                            height="40"></a>
+                    <button class="navbar-toggler hidden-lg-up" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                        aria-label="Toggle navigation"></button>
+                    <div class="collapse navbar-collapse" id="collapsibleNavId">
+                        <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                            <li class="nav-item active">
+                                <a id="navopcion" class="nav-link" href="../index.html">Inicio <span
+                                        class="visually-hidden">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="navopcion" class="nav-link" href="quienesomos.html">¿Quienes somos?</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a id="navopcion" class="nav-link dropdown-toggle" href="#" id="dropdownId"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ofrecemos</a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                    <a class="dropdown-item" href="productos.html">Productos</a>
+                                    <a class="dropdown-item" href="servicios.html">Servicios</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a id="navopcion" class="nav-link" href="#">Contactanos</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a id="navopcion" class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Iniciar Sesion</a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                    <a class="dropdown-item" href="../app/loginAdmin.html">Como administrador</a>
+                                    <a class="dropdown-item" href="../app/login.html">Como cliente</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <form class="d-flex my-2 my-lg-0">
+                            <input class="form-control me-sm-2" type="text" placeholder="Buscar...">
+                            <button id="botonbuscar" class="btn btn-outline-success my-2 my-sm-0"
+                                type="submit">Buscar</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        <br><br><br><br>
+        <div id="titulo-contacto">
+            <h1> Soporte e información de contacto</h1>
+        </div> <br>
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-4">
+                <div id="card-contacto" class="card">
+                    <img src="img/soporte.png" class="card-img-top-contact" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="text-align: center; color: black;">Soporte</h5>
+                        <p class="card-text" style="text-align: center; color: black;">Accede a todo soporte técnico en
+                            línea que ofrecemos sin moverte de tu casa, todos los días.</p>
+                    </div>
+                </div> <br>
+            </div>
+            <div class="col col-lg-4">
+                <div id="card-contacto" class="card">
+                    <img src="img/garantia1.png" class="card-img-top-contact" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="text-align: center; color: black;">Garantía</h5>
+                        <p class="card-text" style="text-align: center; color: black;">Revisa el estado de la
+                            garantía de tu adquisición usando tu código de compra.</p>
+                    </div>
+                </div> <br>
+            </div> <br> <br>
+            <div class="row justify-content-md-center">
+                <div class="col col-lg-4">
+                    <div id="card-contacto" class="card">
+                        <img src="img/terminos1.png" class="card-img-top-contact" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title" style="text-align: center; color: black;">Términos</h5>
+                            <p class="card-text" style="text-align: center; color: black;">Consulta los términos y
+                                condiciones de nuestros productos y servicios para que no tengas dudas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-lg-4">
+                    <div id="card-contacto" class="card">
+                        <img src="img/foro.png" class="card-img-top-contact" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title" style="text-align: center; color: black;">Foros</h5>
+                            <p class="card-text" style="text-align: center; color: black;">Visita nuestros foros y
+                                comparte la experiencia de PCBUILDEREC, resuelve dudas y más.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div> <hr>
+    <div class="container-fluid">
+        <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|}">
+            <div class="col-md-5">
+                <h2 id="titulo-contacto">Ubicación</h2> <hr>
+                <iframe id="googlemap"
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2049.4416576322246!2d-78.5171432!3d-0.2249808!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc6029256689ed873!2sInstituto%20Superior%20Tecnol%C3%B3gico%20Yavirac!5e1!3m2!1ses!2sec!4v1655955987342!5m2!1ses!2sec"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div> 
+            <div class="col-md-4">
+                <h2 id="titulo-contacto">Enviar un mensaje</h2> <hr>
+                <form action="#" autocomplete="off">
+                    <div class="row">
+                        <label for="formGroupExampleInput" class="form-label">Ingrese su nombre</label>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
+                        </div>
+                    </div> 
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput" class="form-label">Ingrese su correo</label>
+                        <input type="email" class="form-control" id="formGroupExampleInput" placeholder="alguien@correo.com">
+                      </div>
+                    <textarea class="areatexto" name="mensaje" placeholder=" Ingresa tu mensaje "></textarea><br>
+                    <input type="submit" name="enviar" value="Enviar" class="btn-enviar">
+                </form>
+            </div>
+            .<div class="col-sm-2">
+                <h2 id="titulo-contacto">Integrantes</h2> <hr width="300px">
+                    <p><b>Gualinga Esteban</b></p>
+                    <pre>eat.gualinga@yavirac.edu.ec</pre>
+                    <p><b>Loor Samuel</b></p>
+                    <pre>ysv.loor@yavirac.edu.ec</pre>
+                    <p><b>Salmerón Billy</b></p>
+                    <pre>bjp.salmeron@yavirac.edu.ec</pre>
+                    <p><b>Venegas Santiago</b></p>
+                    <pre>smg.venegas@yavirac.edu.ec</pre>
+            </div>
+        </div>
+
+    </div> <hr>
+
+    <footer>
+        <div class="container-footer-all">
+            <div class="container-body">
+                <div class="colum1">
+                    <h1>Integrantes</h1> <br>
+                    <p>Gualinga Esteban</p>
+                    <p>Loor Samuel</p>
+                    <p>Salmerón Billy</p>
+                    <p>Venegas Santiago</p>
+                </div>
+                <div class="colum2">
+                    <h1>Redes Sociales</h1> <br>
+                    <div class="row-ft1">
+                        <a href="https://es-la.facebook.com/"><img class="row-img1" src="img/fb1.png"></a>
+                        <label id="textopie" class="row-label-a">Siguenos en Facebook</label>
+                    </div> <br>
+                    <div class="row-ft1">
+                        <a href="https://www.instagram.com"> <img class="row-img1" src="img/in.png"></a>
+                        <label class="row-label-a">Siguenos en Instagram</label>
+                    </div> <br>
+                    <div class="row-ft1">
+                        <a href="https://web.whatsapp.com/"><img class="row-img1" src="img/wp1.png"></a>
+                        <label class="row-label-a">Ingresa al chat de Whatsapp</label>
+                    </div>
+                </div>
+                <div class="colum3">
+                    <h1>Informacion contactos</h1>
+                    <div class="row2">
+                        <img src="img/casa.png">
+                        <label>García Moreno S4-35 y, Quito 170401</label>
+                    </div>
+                    <div class="row2">
+                        <img src="img/wp1.png">
+                        <label>+593983545114</label>
+                    </div>
+                    <div class="row2">
+                        <img src="img/correo.png">
+                        <label>eat.gualinga@yavirac.edu.ec</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="container-footer">
+            <div class="footer">
+                <div class="copyright">
+                    ®2022 Todos los Derechos Calificados |
+                    <a href="#">Certificados</a>
+                </div>
+                <div class="information">
+                    Compañia | Terminos y Condiciones
+                </div>
+            </div>
+    </footer>
+</body>
+
+
+</html>

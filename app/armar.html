@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Integrador</title>
+    <link rel="stylesheet" href="../web/css/style.css">
+</head>
+
+<body>
+    <div>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    </div>
+    <div class="cabecera">
+        <div class="container">
+            <form action="armar">
+                <ul class="nav nav-pills nav-fill">
+                    <li>
+                        <a class="navbar-brand" href="dashboard.html"><img src="../web/img/logo.png" alt="" width="150" height="30"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link1" href="compras.html">Nueva compra</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link1" href="armar.html">Armar PC</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link1" href="catalogo.html">Ir a catálogo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link1" href="../index.html">Cerrar sesión</a>
+                    </li>
+                </ul>
+        </div>
+    </div>
+
+
+    <br>
+
+    <div class="container2">
+
+        <div class="row">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <img src="../web/img/procesador.png" alt=""><a href="#" class="dirigida1">Procesador</a>
+                    </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>Es el componente más importante de tu nueva PC.</strong>
+                            <ul>
+                                <li><code>INTEL CORE I9-12900K 16 núcleos y 24 hilos</code><input type="radio" name="pro1" id="pro1"> </li>
+                                <li><code>INTEL CORE I7-12700KF 12 núcleos y 20 hilos</code><input type="radio" name="pro2" id="pro2"> </li>
+                                <li><code>AMD Ryzen 9 5950X</code><input type="radio" name="pro3" id="pro3"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <img src="../web/img/tarjetaM.png" alt=""><a href="" class="dirigida1">Tarjeta Madre</a>
+                    </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>De ella dependerá la comunicación de todos tus componentes.</strong>
+                            <ul>
+                                <li><code>Mainboard ROG STRIX Z690-F</code><input type="radio" name="tarM1" id="tarM1"></li>
+                                <li><code>Mainboard ROG STRIX Z690-A</code><input type="radio" name="tarM2" id="tarM2"></li>
+                                <li><code>Mainboard GIGABYTE X570</code><input type="radio" name="tarM3" id="tarM3"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <img src="../web/img/MRam.png" alt=""><a href="" class="dirigida1"> Memoria Ram</a>
+                    </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>Determinará la cantidad de pestañas de Google Chrome que podrás tener abiertas.</strong>
+                            <ul>
+                                <li><code>XPG RGB 32GB DDR5 5200MHZ</code><input type="radio" name="Ram1" id="Ram1"></li>
+                                <li><code>Kingston Fury Beast 16GB RGB 3200MHZ</code><input type="radio" name="Ram2" id="Ram2"></li>
+                                <li><code>Kinstom fury beast 64GB RGB 3200MHZ</code><input type="radio" name="Ram3" id="Ram3"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        <img src="../web/img/GPU.png" alt=""><a href="" class="dirigida1">Tarjeta de video</a>
+                    </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>Si más FPSs quieres tener, la mejor tarjeta de video que puedas debes poner.</strong>
+                            <ul>
+                                <li><code>Zotac RTX 3080Ti Trinity 12GB GDDR6X</code><input type="radio" name="TarG1" id="TarG1"></li>
+                                <li><code>TUF GeForce RTX 30160 Ti</code><input type="radio" name="TarG2" id="TarG2"></li>
+                                <li><code>ASUS tuf GeForce RTX 3090 OC 24GB</code><input type="radio" name="TarG3" id="TarG3"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        <img src="../web/img/Unidad SSD.png" alt=""><a href="" class="dirigida1"> Unidad SSD</a>
+                    </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>Sin uno de estos tu PC será muuuuuy leeeenta….</strong>
+                            <ul>
+                                <li><code>Corsair 1TB NVMe PCie 4.0</code><input type="radio" name="SSD1" id="SSD1"></li>
+                                <li><code>Corsair 1TB PCie 4.0</code><input type="radio" name="SSD2" id="SSD2"></li>
+                                <li><code>Corsair MP600 core 1TB NVMe</code><input type="radio" name="SSD3" id="SSD3"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSix">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        <img src="../web/img/fuente.png" alt=""><a href="" class="dirigida1">Fuente de poder</a>
+                    </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>Elije sabiamente, será quien proporcione la energía de toda tu PC.</strong>
+                            <ul>
+                                <li><code>Corsair RM1000X - 1000 watts</code><input type="radio" name="Fuente1" id="Fuente1"></li>
+                                <li><code>Corsair RM750x - 750 watss</code><input type="radio" name="Fuente2" id="Fuente2"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSeven">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+                                    <img src="../web/img/case.png" alt="" width="50px" height="50px"><a href="#" class="dirigida1">Case o Caja</a>
+                                </button>
+                        </h2>
+                        <div id="collapseSeven" class="accordion-collapse collapse " aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>Es la estructura metálica o plástica de tu PC.</strong>
+                                <ul>
+                                    <li><code>Corsair 7000X RGB ICUE</code><input type="radio" name="Case1" id="Case1"></li>
+                                    <li><code>CORSAIR 5000D AIRFLOW TEMPERED GLASS</code><input type="radio" name="Case2" id="Case2"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingEight">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="fals" aria-controls="collapseEight">
+                                    <img src="../web/img/cooler.png" alt="" width="50px" height="50px"><a href=" " class="dirigida1">Cooler</a>
+                                </button>
+                        </h2>
+                        <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>De el dependera la refrigeración de tu PC.</strong>
+                                <ul>
+                                    <li><code>Water cooler Corsair ICUE H150i RGB PRO XT</code><input type="radio" name="Cong1" id="Cong1"></li>
+                                    <li><code>Water cooler Corsair ICUE H100i elite RGB 2x 120mm</code><input type="radio" name="Cong2" id="Cong2"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingNine">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                    <img src="../web/img/monitor.png" alt=" " width="50px" height="50px"><a href="" class="dirigida1">Monitor</a>
+                                </button>
+                        </h2>
+                        <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>Para una mejor calidad visual.</strong>
+                                <ul>
+                                    <li><code>SAMSUNG serie T350 de 22 pulgadas FHD 1080p, 75 Hz, panel IPS, HDMI, VGA (D-Sub)</code><input type="radio" name="Monitor1" id="Monitor1"></li>
+                                    <li><code>SAMSUNG LED curvo de 24 pulgadas (diseño súper delgado), frecuencia de actualización de 60 Hz con modo de juego AMD FreeSync</code><input type="radio" name="Monitor2" id="Monitor2"></li>
+                                    <li><code>ASUS TUF Gaming 23.8» 1080P (VG249Q1R) - Full HD, IPS, 165 Hz (admite 144 Hz), 1 ms</code><input type="radio" name="Monitor3" id="Monitor3"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br><br></div>
+            <input type="button" value="ARMAR" onclick="Armarpc()" onmouseup="Mostrar()"><input type="reset" onclick="reload()" value="RESTABLECER">
+        </div>
+        </form>
+    </div>
+    <img src="../web/img/PCGAMERCOMPONENETES.jpeg" alt="PC" id="PCGAMER" width="400px" height="410px">
+    <div class="PcCreada">
+        <h1>TU PC CONTENDRA LOS SIGUIENTES COMPONENTES :</h1>
+        <h3 id="componentes"></h3>
+        <h3 id="precio"></h3>
+    </div>
+    <div class="precios">
+        <h1>PRECIOS</h1>
+        <h3 id="preciosC"></h3>
+    </div>
+
+
+    </div>
+
+    <script src="../web/js/armar.js">
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <br>
+
+</body>
+
+<footer id="footer-armar">
+    <img src="../web/img/catalogo.PNG" alt=" ">
+</footer>
+
+</html>
