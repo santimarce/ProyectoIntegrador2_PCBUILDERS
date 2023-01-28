@@ -752,18 +752,75 @@ footer{
     top: 140vh
 }
 
-/* dashboard */
-#grid-dash{
-    background: black;
-    border-radius: 2%;
-    box-shadow: 0 10px 30px rgba(1, 255, 22, 0.596), 0 10px 80px rgba(1, 255, 22, 0.596);
+/* dashboard Usuario */
+.cabecera2dash{
+    background: linear-gradient(150deg, purple 20%, red, orange 65%, yellow , green, blue);
 }
+
+.bihouse{
+    color: purple;
+}
+.bicuenta{
+    color: rgb(193, 30, 30);
+    margin: 5px 0px 0px 0px;
+}
+.bicompra{
+    color: rgb(227, 155, 22);
+}
+.bipedidos{
+    color: rgb(215, 215, 19);
+    margin: 5px 0px 0px 0px;
+}
+.biofer{
+    color: purple;
+}
+.bicall{
+    color: rgb(193, 30, 30);
+    margin: 10px 0px 0px 0px;
+}
+.bipersonalizar{
+    color: rgb(227, 155, 22);
+    margin: 5px 0px 0px 0px;
+}
+.biajustes{
+    color: rgb(215, 215, 19);
+    margin: 5px 0px 0px 0px;
+}
+
+.nav-item2{
+    margin: 20px 50px 0px 50px;
+}
+
 .nav-link1{
     text-decoration: none;
-    color: black;
+    color: #FFF;
 }
 .nav-link1:hover{
+    background-color: black;
+    border-radius: 6px;
+    border: 1px groove rgb(151, 133, 216);
     color: white;
+    padding: 5px 10px;
+}
+
+#grid-dash{
+    background-image: url(../img/fondoindex.jpg);
+    border-radius: 2%;
+    box-shadow: 0 10px 30px rgba(1, 255, 22, 0.596), 0 10px 80px rgba(1, 255, 22, 0.596);
+    padding: 20px 0px 20px 50px;
+}
+
+.card2{
+    background: #FFF;
+    border-radius: 6px;
+    box-shadow: 0 10px 20px rgba(1, 255, 22, 0.596), 0 10px 20px rgba(1, 255, 22, 0.596);
+}
+.card2:hover{
+    transform: scale(1.1);
+}
+
+.imgdashuser{
+    margin: 10px 0px;
 }
 /* cuenta1 */
 
