@@ -11,11 +11,7 @@ a{
 .navbar{
     background: linear-gradient(150deg, purple 20%, red, orange 65%, yellow , green, blue);    
 }
-.nav-item:hover{
-    background-color: black;
-    border-radius: 5px;
-    border: 1px groove rgb(151, 133, 216);
-}
+
 #navopcion{
     color: white;
 }
@@ -752,19 +748,63 @@ footer{
     top: 140vh
 }
 
-/* dashboard */
-#grid-dash{
-    background: black;
+/* dashboard */  
+#grid-dashadmin{
+    background-image: url(../img/fondoadmin.jpg);
     border-radius: 2%;
-    box-shadow: 0 10px 30px rgba(1, 255, 22, 0.596), 0 10px 80px rgba(1, 255, 22, 0.596);
+    box-shadow: 0 10px 30px rgba(255, 153, 0, 0.822), 0 10px 80px rgba(255, 153, 0, 0.822);
 }
-.nav-link1{
+
+.encabezadoadmin{
+    background: linear-gradient(150deg, purple 20%, red, orange 65%, yellow , green, blue);
+}
+
+.imgfadmin{
+    margin: 10px 0px;
+}
+
+.nav-linkadmin1{
     text-decoration: none;
-    color: black;
+    color: #FFF;
 }
-.nav-link1:hover{
+.nav-linkadmin1:hover{
+    background-color: black;
+    border-radius: 6px;
+    border: 1px groove rgb(151, 133, 216);
     color: white;
+    padding: 5px 10px;
 }
+
+.nav-itemadmin{
+    margin: 20px 25px 0px 25px;
+}
+
+.biadmincuenta{
+    color: rgb(206, 86, 206); 
+}
+
+.biadminproducts{
+    color: rgb(238, 69, 69);
+}
+
+.biadmingestuser{
+    color: rgb(144, 255, 110);
+}
+
+.biadmingestdat{
+    color: rgb(243, 243, 100);
+}
+
+.biadminconfig{
+    color: rgb(62, 62, 236);
+}
+
+.cardadmin{
+    background: #FFF;
+    border-radius: 6px;
+    box-shadow: 0 10px 20px rgba(255, 153, 0, 0.822), 0 10px 20px rgba(255, 153, 0, 0.822);
+}
+
 /* cuenta1 */
 
 .cuenta-fondo{
@@ -933,7 +973,7 @@ tr {
 .contenedor-loginAd {
     width: 320px;
     height: 380px;
-    background: black;
+    background: rgb(0, 0, 0);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -996,7 +1036,7 @@ tr {
 
 .contenedor-loginAd input[type="button"]:hover {
     background-color: white;
-    color: black;
+    color: rgb(0, 0, 0);
 }
 /* Config Admin   */
 .lateral{
@@ -1012,7 +1052,7 @@ tr {
 }
 .lateral:hover{
     background-color: white;
-    color: black;
+    color: rgb(0, 0, 0);
     cursor: grab;
 }
 /*  ingreso pedidos  */
