@@ -7,3 +7,4 @@ create table Producto(
 	Modulo	integer	not	null,
 	fecha_adquisicion	date,
 	categoria_idCat	integer);
+
