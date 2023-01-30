@@ -1,1 +1,13 @@
 Productos estructura codigos:
+100
+
+Pago estructura:
+200
+
+Usuario estructura:
+
+300
+
+
+
+
