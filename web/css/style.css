@@ -819,6 +819,33 @@ footer{
     margin: 10px 0px;
 }
 
+/* dashboard Admin */
+#grid-dashadmin{
+    background-image: url(../img/fondoadmin.jpg);
+    border-radius: 2%;
+    box-shadow: 0 10px 30px rgba(255, 153, 0, 0.822), 0 10px 80px rgba(255, 153, 0, 0.822);
+}
+
+.encabezadoadmin{
+    background: linear-gradient(150deg, purple 20%, red, orange 65%, yellow , green, blue);
+}
+
+.imgfadmin{
+    margin: 10px 0px;
+}
+
+.nav-linkadmin1{
+    text-decoration: none;
+    color: #FFF;
+}
+.nav-linkadmin1:hover{
+    background-color: black;
+    border-radius: 6px;
+    border: 1px groove rgb(151, 133, 216);
+    color: white;
+    padding: 5px 10px;
+}
+
 .nav-itemadmin{
     margin: 20px 25px 0px 25px;
 }
@@ -848,6 +875,17 @@ footer{
     border-radius: 6px;
     box-shadow: 0 10px 20px rgba(255, 153, 0, 0.822), 0 10px 20px rgba(255, 153, 0, 0.822);
 }
+
+.cardadmin:hover{
+    transform: scale(1.1);
+}
+
+#grid-dashadmin{
+    background-image: url(../img/fondoadmin.jpg);
+    border-radius: 2%;
+    box-shadow: 0 10px 30px rgba(255, 153, 0, 0.822), 0 10px 80px rgba(255, 153, 0, 0.822);
+}
+
 
 /* cuenta1 */
 
