@@ -4,6 +4,8 @@ from psycopg2 import connect, extras
 app = Flask(__name__)
 app = Flask(__name__, static_folder='web')  #Cambio de nombre la carpeta por defecto llamada web para poder usar esa referencia de aquí en adelante
 
+
+
 #control de prueba para añadir productos desde el dashboard a la base
 @app.route('/dashboard')
 def dashboard():
