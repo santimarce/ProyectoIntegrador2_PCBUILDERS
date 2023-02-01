@@ -4,13 +4,33 @@ from psycopg2 import connect, extras
 app = Flask(__name__)
 app = Flask(__name__, static_folder='web')  #Cambio de nombre la carpeta por defecto llamada web para poder usar esa referencia de aquí en adelante
 
+# Conexion a la base de datos estatica
+
+
+host = 'localhost'
+port = '5432'
+dbname = 'ProyectoIntegrador2do'
+username = 'postgres'
+password = 'Santi018'
+
+
+def Conexiondb():
+    conn = connect(host=host, port=port, dbname=dbname,
+                   user=username, password=password)
+    return conn
+
+# Ingreso de productos a la base
+@app.route('/dashboardadmin/ingresarproducto')
+def ingresarproductos():
+    
+    return render_template('app/ingresoprodadmin.html')
 
 
 #control de prueba para añadir productos desde el dashboard a la base
 @app.route('/dashboard')
 def dashboard():
-    return render_template('dashboardbase.html')  
-    # return render_template('d.html')
+    return render_template('app/dashboard-admin.html')  
+
     
 # a partir de aquí generar sus rutas respectivas, para las páginas estáticas no hace falta agregar rutas siempre y cuando la indexacion
 # quede acorde a como se ha ordenado en las carpetas los html
