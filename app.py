@@ -22,7 +22,6 @@ def Conexiondb():
 # Ingreso de productos a la base
 @app.route('/dashboardadmin/ingresarproducto')
 def ingresarproductos():
-    
     return render_template('app/ingresoprodadmin.html')
 
 
