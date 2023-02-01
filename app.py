@@ -4,20 +4,20 @@ from psycopg2 import connect, extras
 app = Flask(__name__)
 app = Flask(__name__, static_folder='web')  #Cambio de nombre la carpeta por defecto llamada web para poder usar esa referencia de aquí en adelante
 
+#control de prueba para añadir productos desde el dashboard a la base
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboardbase.html')  
+    # return render_template('d.html')
+    
+# a partir de aquí generar sus rutas respectivas, para las páginas estáticas no hace falta agregar rutas siempre y cuando la indexacion
+# quede acorde a como se ha ordenado en las carpetas los html
+# si alguna ruta no redirige porfavort verificar, usar render_template en vez de send_file en lo posible
+# para evitar que cambie las direcciones tal como lo haría con jinja2
 
 @app.route('/')
 def home():
-    return send_file('index.html')
-
-# @app.route('/')
-# def home():
-#     return render_template('dashboardbase.html')
-
-@app.route('/templates/dashboard')
-def dashboardadmin():
-    return render_template('dashboardbase.html')
-
-
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
