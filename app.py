@@ -26,8 +26,8 @@ def ingresarproductos():
 
 
 #control de prueba para añadir productos desde el dashboard a la base
-@app.route('/dashboard')
-def dashboard():
+@app.route('/dashboardadmin')
+def dashboardadmin():
     return render_template('app/dashboard-admin.html')  
 
     
