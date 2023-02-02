@@ -30,7 +30,17 @@ def ingresarproductos():
 def dashboardadmin():
     return render_template('app/dashboard-admin.html')  
 
-    
+#ruta login cliente
+@app.route('/login')
+def login():
+    return render_template('app/login.html')
+
+#ruta login admin
+@app.route('/loginAdmin')
+def loginAdmin():
+    return render_template('app/loginAdmin.html')  
+
+  
 # a partir de aquí generar sus rutas respectivas, para las páginas estáticas no hace falta agregar rutas siempre y cuando la indexacion
 # quede acorde a como se ha ordenado en las carpetas los html
 # si alguna ruta no redirige porfavort verificar, usar render_template en vez de send_file en lo posible
@@ -39,6 +49,7 @@ def dashboardadmin():
 @app.route('/')
 def home():
     return render_template('index.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
