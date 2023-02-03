@@ -8,7 +8,7 @@ app = Flask(__name__, static_folder='web')  #Cambio de nombre la carpeta por def
 
 
 host = 'localhost'
-port = '5432'
+port = '5432' 
 dbname = 'ProyectoIntegrador2do'
 username = 'postgres'
 password = 'Santi018'
@@ -22,6 +22,12 @@ def Conexiondb():
 # Ingreso de productos a la base
 @app.route('/dashboardadmin/ingresarproducto')
 def ingresarproductos():
+    con = Conexiondb()
+    cur = con.cursor(cursor_factory=extras.RealDictCursor)
+  #  cur.execute("SELECT * FROM VS_Auto")
+   # autos = cur.fetchall()
+    cur.close()
+    con.close()    
     return render_template('app/ingresoprodadmin.html')
 
 
@@ -33,7 +39,7 @@ def dashboardadmin():
 #armarpc
 @app.route('/armarpc')
 def armarpc():
-    return render_template('app/armar.html')  
+    return render_template('app/armar.html')
 
 #ruta login cliente
 @app.route('/login')
