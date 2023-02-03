@@ -35,6 +35,11 @@
             margin: 0 auto;
             /* Centra el div horizontalmente */
             text-align: center;
+            border-radius: 5px;
+            border-color: black;
+            border-style: groove;
+            border-width: 3px;
+            box-shadow: 0 10px 20px purple, 0 10px 20px purple;
         }
     </style>
 </head>
@@ -76,7 +81,7 @@
 
     {% block body %}
 
-    <div class="container-formaprod" style="background: red;">
+    <div class="container-formaprod">
         <div class="row">
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -86,13 +91,14 @@
                 <div class="form-control form-control-md">
                     <select id="ComboTipoComponente" name="ComboTipoComponente">
                         <option value="" disabled selected hidden>Seleccione una opción de producto</option>
-                        <option value="Desktop">Desktop</option>
-                        <option value="Perifericos">Periféricos</option>
                         <option value="Laptop">Laptop</option>
+                        <option value="Desktop">Desktop</option>
                         <option value="Software">Software</option>
-                        <option value="Videojuegos">Desktop</option>
-                        <option value="MemoriaRam">Memoria Ram</option>
-                        <option value="TarjetaGrafica">Tarjeta Gráfica</option>
+                        <option value="Videojuegos">Videojuegos</option>
+                        <option value="Perifericos">Periféricos</option>
+                        <option value="Almacenamiento">Almacenamiento</option>
+                        <option value="Memoria Ram">Memoria Ram</option>
+                        <option value="Tarjeta Grafica">Tarjeta Gráfica</option>
                         <option value="Procesador">Procesador</option>
                         <option value="Mainboard">Mainboard</option>
                         <option value="Fuente">Fuentes Alimentación</option>
@@ -125,7 +131,7 @@
                 </div>
                 <div class="col-md">
                     <div class="form-group">
-                        <label for="cantidadunidadesingreso">Cantidad de unidades a ingresar</label>
+                        <label for="cantidadunidadesingreso">Cantidad de unidades</label>
                         <input type="text" class="form-control" id="cantidadunidades"
                             placeholder="Ingresa su precio unitario">
                     </div>
@@ -134,7 +140,7 @@
                     <div class="col-md">
                         <div class="form-group">
                             <label for="descripcionproducto">Ingrese la descripción del producto (opcional)</label>
-                            <textarea class="form-control" id="descripcionproducto" rows="2"
+                            <textarea class="form-control" id="descripcionproducto" rows="2" 
                                 placeholder="Descripcion"></textarea>
                         </div>
                     </div>
@@ -153,7 +159,7 @@
 
     {% endblock %}
     <hr>
-<script src="{{ url_for('static', filename='js/ingresoproductos.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/ingresoproductos.js')}}"></script>
     <footer>
     </footer>
 </body>
