@@ -30,6 +30,11 @@ def ingresarproductos():
 def dashboardadmin():
     return render_template('app/dashboard-admin.html')  
 
+#armarpc
+@app.route('/armarpc')
+def armarpc():
+    return render_template('app/armar.html')  
+
 #ruta login cliente
 @app.route('/login')
 def login():
