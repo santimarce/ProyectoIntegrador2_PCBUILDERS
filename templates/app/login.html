@@ -48,14 +48,6 @@
                                 </li>
                             </ul>
 
-                            <div class="nav-item dropdown">
-                                <a id="navopcion" class="nav-link dropdown-toggle" href="#" id="dropdownId"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Iniciar Sesion</a>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="/loginAdmin">Como administrador</a>
-                                    <a class="dropdown-item" href="#">Como cliente</a>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </nav>
@@ -64,19 +56,38 @@
         <div class="contenedor-login">
             <img class="logito" src="../web/img/logofondo.jpg" alt="Logo pcbuilders ec" title="PC BUILDERS EC">
             <h1>Inicia Sesion Aquí</h1>
-            <form action="login" name="login">
+            <form id="login" class="login" action="/login" method="POST">
                 <!--USUARIO-->
-                <label for="username">USUARIO</label>
-                <input type="text" name="usu" id="usu" placeholder="Ingrese el nombre de usuario">
-                <!--CONTRASEÑA-->
-                <label for="password">CONTRASEÑA</label>
-                <input type="password" name="contra" id="contra" placeholder="Ingrese la contraseña">
-
-                <input type="button" value="Iniciar Sesion" onclick="loginx()">
+                <!--cedula-->
+              <div class="row">
+                <div class="col">
+                  <label for="cedula">Cedula:</label>
+                  <input
+                    name="cedula"
+                    type="text"
+                    class="form-control mb-2"
+                    required
+                  />
+                </div>
+              </div>
+              <!--contrasenia-->
+              <div class="row">
+                <div class="col">
+                  <label for="contrasenia">Contraseña:</label>
+                  <input
+                    name="contrasenia"
+                    type="text"
+                    class="form-control mb-2"
+                    required
+                  />
+                </div>
+              </div>
+              <button class="btn btn-danger" type="submit">Guardar</button>
                 <hr>
                 <a href="/registro">¿No tienes una cuenta? Registrate ahora</a>
             </form>
         </div>
+        
         <script src="../web/js/login.js">
         </script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

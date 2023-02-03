@@ -1,136 +1,122 @@
-//REGISTRO
+const formRegistro = document.querySelector("#formRegistro");
 
+let usuarios = [];
+let editing = false;
+let usuarioId = null;
 
-function Correo() {
-    var correo = String(document.getElementById("correo").value);
+window.addEventListener("DOMContentLoaded", async () => {
+  const response = await fetch("/getList/usuarios");
+  const data = await response.json();
+  usuarios = data;
+  renderUser(usuarios);
+});
 
-    if (correo.includes('@') && correo.includes('.')) {
+formRegistro.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const cedula = formRegistro["cedula"].value;
+  const correo = formRegistro["correo"].value;
+  const nombres = formRegistro["nombres"].value;
+  const fechaNacimiento = formRegistro["fechaNacimiento"].value;
+  const callePrimaria = formRegistro["callePrimaria"].value;
+  const calleSecundaria = formRegistro["calleSecundaria"].value;
+  const contrasenia = formRegistro["contrasenia"].value;
 
-    } else {
-        Swal.fire({
-            title: 'ERROR',
-            text: '"' + correo + '"' + ' no es una direccion de correo electronico',
-            icon: 'error',
-            timer: 5000,
-            timerProgressBar: true,
-            width: '400px',
-        })
-    };
+  if (!editing) {
+    // send user to backend
+    const response = await fetch("/save/usuario", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        cedula,
+        correo,
+        nombres,
+        fechaNacimiento,
+        callePrimaria,
+        calleSecundaria,
+        contrasenia
+      }),
+    });
 
-}
+    const data = await response.json();
+    usuarios.push(data);
+    renderUser(usuarios);
+  } else {
+    const response = await fetch(`/update/usuario/${usuarioId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        cedula,
+        correo,
+        nombres,
+        fechaNacimiento,
+        callePrimaria,
+        calleSecundaria,
+        contrasenia
+      }),
+    });
+    const usuarioActualizado = await response.json();
 
-function contras() {
-    var contra1 = document.registro.cont1.value;
-    var contra2 = document.registro.cont2.value;
-    var contraDef = contra2
-    if (contra1 != contra2) {
-        Swal.fire({
-            title: 'UPS',
-            text: 'Las contraseñas no coinciden',
-            icon: 'error',
-            timer: 5000,
-            timerProgressBar: true,
-            width: '400px',
-        })
-    }
-}
+    usuarios = usuarios.map((usuario) =>
+      usuario.cedula === usuarioActualizado.cedula ? usuarioActualizado : usuario
+    );
+    console.log(usuarios)
+    renderUser(usuarios);
 
-function reg() {
+    editing = false;
+    usuarioId = null;
+  }
+  formRegistro.reset();
+});
 
-    if (document.registro.nom.value == 0 || document.registro.ape.value == 0 ||
-        document.registro.correo.value == 0 || document.registro.id.value == 0 ||
-        document.registro.fecha.value == 0 || document.registro.num.value == 0 ||
-        document.registro.dir.value == 0) {
-        Swal.fire({
-            title: 'POR FAVOR',
-            text: 'Rellene todos los datos del formulario',
-            icon: 'warning',
-            timer: 5000,
-            timerProgressBar: true,
-            width: '400px',
-        })
-    } else if (document.getElementById("terminos").checked == true) {
+function renderUser(usuarios) {
+  const userList = document.querySelector("#tablaUsuarios");
+  userList.innerHTML = "";
+  usuarios.forEach((usuario) => {
+    const userItem = document.createElement("tr");
+    userItem.innerHTML = `
+    <th scope="row">${usuario.cedula}</th>
+    <td><button class="btn-edit btn btn-info">Editar</button><button class="btn-delete btn btn-danger">Eliminar</button></td>
+    <td>${usuario.correo}</td>
+    <td>${usuario.nombres}</td>
+    <td>${usuario.fechanacimiento}</td>
+    <td>${usuario.esusuario ? "Si" : "No"}</td>
+    <td>${usuario.esadmin ? "Si" : "No"}</td>
+    <td>${usuario.nivelrol}</td>
+    <td>${usuario.contrasenia}</td>
+    `;
 
+    // Handle delete button
+    const btnDelete = userItem.querySelector(".btn-delete");
 
-        var correo = document.getElementById("correo").value;
+    btnDelete.addEventListener("click", async (e) => {
+      const response = await fetch(`/delete/usuario/${usuario.cedula}`, {
+        method: "DELETE",
+      });
 
-        (async () => {
-            await Swal.fire({
-                title: 'UN PASO MAS',
-                text: 'Hemos enviado un codigo de activacion al correo ' + '"' + correo + '"' + '¡Activa tu cuenta con un solo click!',
-                timer: 8000,
-                timerProgressBar: true,
-                icon: 'success'
-            })
+      const data = await response.json();
 
+      usuarios = usuarios.filter((usuario) => usuario.cedula !== data.cedula);
+      renderUser(usuarios);
+    });
 
-            window.location.assign("/registro")
-        })();
-    } else {
-        Swal.fire({
-            title: 'ERROR',
-            text: 'Acepte los teminos y condiciones de uso paara poder registrarse',
-            icon: 'error',
-            timer: 5000,
-            timerProgressBar: true,
-            width: '400px',
-        })
-    }
-}
+    userList.appendChild(userItem);
 
-//LOGIN
-function loginx() {
+    // Handle edit button
+    const btnEdit = userItem.querySelector(".btn-edit");
 
-    if (document.login.usu.value == 'Usuario1' && document.login.contra.value == '123456') {
-        (async () => {
-            await Swal.fire({
-                title: 'INICIO DE SESION CORRECTO',
-                text: 'redirigiendo...',
-                icon: 'success',
-                width: '400px',
-            });
-            window.location.assign("/dashboard");
-        })();
+    btnEdit.addEventListener("click", async (e) => {
+      const response = await fetch(`/update/usuario/${usuario.cedula}`);
+      const data = await response.json();
 
-    } else {
-        Swal.fire({
-            title: 'USUARIO O CONTRASEÑA INCORRECTA',
-            text: 'intentelo de nuevo',
-            icon: 'error',
-            width: '400px',
-        });
+      formRegistro["correo"].value = data.correo;
+      formRegistro["nombres"].value = data.nombres;
 
-    }
-}
-
-
-//LOGIN ADMINISTRADOR
-function loginAd() {
-    var usuario, clave
-    usuario = document.getElementById("usuario").value;
-    clave = document.getElementById("contra").value;
-    if (usuario == "Admin1" && clave == "654321") {
-        (async () => {
-            await Swal.fire({
-                title: 'INICIO DE SESION CORRECTO',
-                text: 'redirigiendo...',
-                icon: 'success',
-                width: '400px',
-            });
-            window.location.assign("/dashboardAdmin");
-        })();
-    } else {
-        Swal.fire({
-            title: 'USUARIO O CONTRASEÑA INCORRECTA',
-            text: 'intentelo de nuevo',
-            icon: 'error',
-            width: '400px',
-        })
-    }
-}
-
-//CAMBIO DE DATOS
-function cambDatos() {
-    alert("Datos cambiados correctamente")
-    window.location.assign("/dashboardAdmin")
+      editing = true;
+      usuarioId = usuario.cedula;
+    });
+  });
 }
