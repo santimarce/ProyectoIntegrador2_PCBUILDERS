@@ -21,39 +21,29 @@
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
                     <div class="container">
-                        <a class="navbar-brand" href="/"><img src="../web/img/logo.png" alt="" width="150" height="40"></a>
-                        <button class="navbar-toggler hidden-lg-up" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+                        <a class="navbar-brand" href="/"><img src="web/img/logo.png" alt="" width="150" height="40"></a>
+                        <button class="navbar-toggler hidden-lg-up" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                            aria-label="Toggle navigation"></button>
                         <div class="collapse navbar-collapse" id="collapsibleNavId">
                             <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                                 <li class="nav-item active">
                                     <a id="navopcion" class="nav-link" href="/">Inicio <span
-                                        class="visually-hidden">(current)</span></a>
+                                            class="visually-hidden">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a id="navopcion" class="nav-link" href="../web/quienesomos.html">¿Quienes somos?</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a id="navopcion" class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ofrecemos</a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownId">
-                                        <a class="dropdown-item" href="../web/productos.html">Productos</a>
-                                        <a class="dropdown-item" href="../web/servicios.html">Servicios</a>
-                                    </div>
+                                    <a id="navopcion" class="nav-link" href="web/quienesomos.html">¿Quienes somos?</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a id="navopcion" class="nav-link" href="../web/contactanos.html">Contactanos</a>
+                                    <a id="navopcion" class="nav-link" href="web/productos.html">Productos</a>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a id="navopcion" class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Iniciar Sesion</a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownId">
-                                        <a class="dropdown-item" href="/loginAdmin">Como administrador</a>
-                                        <a class="dropdown-item" href="/login">Como cliente</a>
-                                    </div>
+                                <li class="nav-item">
+                                    <a id="navopcion" class="nav-link" href="web/contactanos.html">Contactanos</a>
                                 </li>
                             </ul>
-                            <form class="d-flex my-2 my-lg-0">
-                                <input class="form-control me-sm-2" type="text" placeholder="Buscar...">
-                                <button id="botonbuscar" class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-                            </form>
+                            <div class="">
+                                <a class="text-light"  href="{{ url_for('formLogin') }}">Iniciar Sesion</a>
+                            </div>
                         </div>
                     </div>
                 </nav>
@@ -63,33 +53,64 @@
         <div class="contenedor-reg">
             <img class="logito2" src="../web/img/logofondo.jpg" alt="logito">
             <h1>Registrate</h1>
-            <form action="registro" name="registro">
-                <label for="nombre">Nombres :</label>
-                <input type="text" name="nom" placeholder="Ingrese al menos un nombre" required>
-                <label for="apellido">Apellidos :</label>
-                <input type="text" name="ape" placeholder="Ingrese al menos un apellido" required>
-                <label for="correo">Correo Electronico :</label>
-                <input type="text" name="correo" placeholder="ejemplo@gmail.com" id="correo" onblur="Correo()">
-                <label for="id">Identificacion (C.I o pasaporte) :</label>
-                <input type="number" name="id" placeholder="00000000000">
-                <label for="fecha">Fecha de nacimiento :</label>
-                <input type="date" name="fecha" placeholder="00/00/0000">
-                <label for="telf">Telefono o celular :</label>
-                <input type="number" name="num" placeholder="000000000">
-                <label for="dir">Direccion :</label>
-                <input type="text" name="dir" placeholder="Av.ejemplo y calle ejemplo">
-                <label for="cont">Contraseña :</label>
-                <input type="password" name="cont1" placeholder="XXXXXXX">
-                <label for="cont">Verifique su contraseña :</label>
-                <input type="password" name="cont2" placeholder="XXXXXXX" onblur="contras()">
-                <div class="terms">
-                    <p> <input type="radio" id="terminos">
-                        <b>Acepto</b> los <a href="https://www.roberthalf.cl/terminos-y-condiciones-de-uso-de-sitio-web" target="_blank">Terminos y condiciones de uso</a></p>
+            <form id="formRegistro" name="formRegistro">
+                <!--Cedula-->
+                <div class="row">
+                    <div class="col">
+                        <label for="cedula">Cedula:</label>
+                        <input type="text" name="cedula" id="cedula" placeholder="Ingrese su cedula" required>
+                    </div>
                 </div>
-                <input type="button" value="Registrarme" onclick="reg()">
+                <!--Correo-->
+                <div class="row">
+                    <div class="col">
+                        <label for="correo">Correo electronico:</label>
+                        <input type="text" name="correo" class="correo" placeholder="Ingrese su correo" required>
+                    </div>
+                </div>
+                <!--Nombres-->
+                <div class="row">
+                    <div class="col">
+                        <label for="nombres">Nombre y apellido:</label>
+                        <input type="text" name="nombres" placeholder="Ingrese su nombre y apellido" id="nombres">
+                    </div>
+                </div>
+                <!--Fechanacimiento-->
+                <div class="row">
+                    <div class="col">
+                        <label for="fechaNacimiento">Fecha de nacimiento:</label>
+                        <input type="date" name="fechaNacimiento" id="fechaNacimiento">
+                    </div>
+                </div>
+                <!--calleprimaria-->
+                <div class="row">
+                    <div class="col">
+                        <label for="callePrimaria">Calle Principal:</label>
+                        <input type="text" name="callePrimaria" id="callePrimaria" placeholder="Ingrese su calle principal">
+                    </div>
+                </div>
+                <!--calleSecundaria-->
+                <div class="row">
+                    <div class="col">
+                        <label for="calleSecundaria">Calle Alterna:</label>
+                        <input type="text" name="calleSecundaria" id="calleSecundaria" placeholder="Ingrese su calle alterna">
+                    </div>
+                </div>
+                <!--contrasenia-->
+                <div class="row">
+                    <div class="col">
+                        <label for="contrasenia">Contraseña:</label>
+                        <input type="password" name="contrasenia" id="contrasenia" placeholder="Ingrese su contraseña">
+                    </div>
+                </div>
+                <!--Botones-->
+                <div class="row justify-content-center">
+                        <div class="col-lg-3">
+                            <button class="btn btn-danger" type="submit">Registrarse</button>
+                    </div>
+                </div>
             </form>
             <script src=" ../web/js/login.js "></script>
-            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         </div>
 
