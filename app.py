@@ -8,26 +8,31 @@ app.config['SECRET_KEY'] =  'usuarios'
 # Conexion a la base de datos estatica
 
 
-host        = 'localhost'
-port        = 5432
-dbname      = 'usuarios'
-user        = 'postgres'
-password    = 'password'
-# host = 'localhost'
-# port = '5432'
-# dbname = 'ProyectoIntegrador2do'
-# user = 'postgres'
-# password = 'Santi018'
-
+host = 'localhost'
+port = '5432' 
+dbname = 'ProyectoIntegrador2do'
+username = 'postgres'
+password = 'Santi018'
+# host        = 'localhost'
+# port        = 5432
+# dbname      = 'usuarios'
+# user        = 'postgres'
+# password    = 'password'
 
 def get_connection():
     conn = connect(host=host, port=port, dbname=dbname,
-                   user=user, password=password)
+                   username=username, password=password)
     return conn
 
 # Ingreso de productos a la base
 @app.route('/dashboardadmin/ingresarproducto')
 def ingresarproductos():
+    con = get_connection()
+    cur = con.cursor(cursor_factory=extras.RealDictCursor)
+  #  cur.execute("SELECT * FROM VS_Auto")
+   # autos = cur.fetchall()
+    cur.close()
+    con.close()    
     return render_template('app/ingresoprodadmin.html')
 
 #//////////////////////////////////////////RUTAS////////////////////////////////////////
