@@ -15,29 +15,32 @@
         
         <nav>
             <a href="/dashboardadmin">Regresar</a>
-            <a href="/">Cerrar Cesión</a>
+            <a class="nav-linkadmin1" href="{{ url_for('logout') }}">Cerrar sesión</a>
         </nav>
     </header>
 
     <section id="tabla">
-        <table>
-            <thead>
+        <div class="tabla-listado mt-3">
+            <table class="table text-dark table-striped table-hover">
+              <thead>
                 <tr>
-                    <th>Borrar</th>
-                    <th>Editar</th>
-                    <th>Usuario</th>
-                    <th>Correo</th>
-                    <th>Contraseña</th>
+                  <th scope="col">Cédula</th>
+                  <th scope="col">Acciones</th>
+                  <th scope="col">Correo</th>
+                  <th scope="col">Nombres</th>
+                  <th scope="col">Fecha de Nacimiento</th>
+                  <th scope="col">Es usuario:</th>
+                  <th scope="col">Es administrador:</th>
+                  <th scope="col">Nivel rol:</th>
+                  <th scope="col">Contraseña:</th>
                 </tr>
-            </thead>
-            <tbody>                
-            </tbody>            
+              </thead>
+              <tbody id="tablaUsuarios" class="table-group-divider"></tbody>
+            </table>
+          </div>          
         </table>
     </section>
-
-    <script src="../web/js/modelo/Usuario.js"></script>
-    <script src="../web/js/controlador/usuario1.js"></script>
-    <script src="../web/js/gestionde.js"></script>
+    <script src=" ../web/js/login.js "></script>
     
 </body>
 </html>
