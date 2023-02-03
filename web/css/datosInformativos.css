@@ -1,0 +1,23 @@
+.encabezadoadmin{
+    background: linear-gradient(150deg, purple 20%, red, orange 65%, yellow , green, blue);
+}
+.imgfadmin{
+    margin: 10px 0px;
+}
+
+.nav-linkadmin1{
+    text-decoration: none;
+    color: #FFF;
+}
+.nav-linkadmin1:hover{
+    background-color: black;
+    border-radius: 6px;
+    border: 1px groove rgb(151, 133, 216);
+    color: white;
+    padding: 5px 10px;
+}
+
+
+.nav-itemadmin{
+    margin: 20px 25px 0px 25px;
+}
