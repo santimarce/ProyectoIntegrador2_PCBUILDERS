@@ -47,13 +47,8 @@
                                 <a id="navopcion" class="nav-link" href="web/contactanos.html">Contactanos</a>
                             </li>
                         </ul>
-                        <div class="nav-item dropdown">
-                            <a id="navopcion" class="nav-link dropdown-toggle" href="#" id="dropdownId"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Iniciar Sesion</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="{{ url_for('loginAdmin') }}">Como administrador</a>
-                                <a class="dropdown-item" href="{{ url_for('login') }}">Como cliente</a>
-                            </div>
+                        <div class="">
+                            <a class="text-light"  href="{{ url_for('formLogin') }}">Iniciar Sesion</a>
                         </div>
                     </div>
                 </div>
@@ -326,7 +321,7 @@
     <br>
 <!-- Este es un boton de prueba 
 <div>
-    <a href="{{ url_for('dashboardadmin') }}">Ir al dashboard</a>
+    <a href="{{ url_for('dashboardAdmin') }}">Ir al dashboard</a>
 </div>
 <br>
 
@@ -334,7 +329,7 @@
 <div>
     <a href="{{ url_for('armarpc') }}">Ir armarpc</a>
 </div>
- PRUEBA -->
+ -->
 
 
 </body>
