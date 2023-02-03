@@ -909,28 +909,7 @@ footer{
     box-shadow: 0 10px 30px rgb(255, 1, 1), 0 10px 50px rgb(255, 1, 1);
 }
 
-/* armar */
 
-.esteban2{
-    width: auto;
-    max-width: 1590px;
-    margin: auto;
-    display: flex;
-    grid-template-columns: 900px 400px;
-    grid-gap: 50px;
-    margin-top: 20px;
-}
-
-.esteban3{
-    padding: 10px;
-    border: 2px solid #ccc; 
-    box-shadow: 0 5px 10px rgb(1, 238, 255), 0 20px 20px rgb(247, 3, 3);
-}
-
-.esteban4{
-    padding: 10px;
-    border: 2px solid white; 
-}
 /*compras*/
 
 table {

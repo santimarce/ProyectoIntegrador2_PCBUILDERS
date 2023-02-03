@@ -1,0 +1,87 @@
+/* Para el encabezado */
+.cabecera2dash{
+    background: linear-gradient(150deg, purple 20%, red, orange 65%, yellow , green, blue);
+}
+
+.nav-item2{
+    margin: 20px 50px 0px 50px;
+}
+
+.nav-link1{
+    text-decoration: none;
+    color: #FFF;
+}
+.nav-link1:hover{
+    background-color: black;
+    border-radius: 6px;
+    border: 1px groove rgb(151, 133, 216);
+    color: white;
+    padding: 5px 10px;
+}
+
+.imgdashuser{
+    margin: 10px 0px;
+}
+
+/* Para cada carta de los productos */
+#armrgbchato1{
+    box-shadow: 0 10px 20px purple, 0 10px 20px purple;
+}
+#armrgbchato2{
+    box-shadow: 0 10px 20px red, 0 10px 20px red;
+}
+#armrgbchato3{
+    box-shadow: 0 10px 20px orange, 0 10px 20px orange;
+}
+
+/* Para la tabla */
+table, th, td {
+    border: 3px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+}
+table{
+    box-shadow: 0 10px 20px green, 0 10px 20px green;
+}
+
+/* Para los botones Armar PC y reiniciar */
+.ARPCEG{
+    box-shadow: 0 10px 20px green, 0 10px 20px green;
+    font-size: 30px;
+    color: black;
+    border-radius: 15px;
+    border: 0px;
+    margin: 0px 25px 0px 0px;
+    padding: 10px 15px;
+}
+.ARPCEG:hover{
+    background: green;
+    box-shadow: 0 10px 20px rgb(23, 23, 23), 0 10px 20px rgb(23, 23, 23);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.RSBCEG{
+    box-shadow: 0 10px 20px green, 0 10px 20px green;
+    font-size: 30px;
+    color: black;
+    border-radius: 15px;
+    border: 0px;
+    margin: 0px 0px 0px 25px;
+    padding: 10px 15px;
+}
+.RSBCEG:hover{
+    background: green;
+    box-shadow: 0 10px 20px rgb(23, 23, 23), 0 10px 20px rgb(23, 23, 23);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Pie de pagina */
+footer{
+    width: 100%;
+    background: rgb(32, 32, 32);
+    color: white;
+}
