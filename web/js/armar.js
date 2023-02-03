@@ -11,10 +11,7 @@ const armarPC = document.getElementById("armarpcya");
             const producto4 = document.getElementById("productosarm4").value;
             const producto5 = document.getElementById("productosarm5").value;
             const producto6 = document.getElementById("productosarm6").value;
-            const producto7 = document.getElementById("productosarm7").value;
-            const producto8 = document.getElementById("productosarm8").value;
-            const producto9 = document.getElementById("productosarm9").value;
-            const seleccionProduct = [producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8, producto9];
+            const seleccionProduct = [producto1, producto2, producto3, producto4, producto5, producto6];
 
             for (const producto of seleccionProduct){
                 if (!producto){
