@@ -20,15 +20,19 @@ def Conexiondb():
     return conn
 
 # Ingreso de productos a la base
-@app.route('/dashboardadmin/ingresarproducto')
-def ingresarproductos():
-    con = Conexiondb()
-    cur = con.cursor(cursor_factory=extras.RealDictCursor)
-  #  cur.execute("SELECT * FROM VS_Auto")
-   # autos = cur.fetchall()
-    cur.close()
-    con.close()    
-    return render_template('app/ingresoprodadmin.html')
+# @app.route('/dashboardadmin/ingresarproducto')
+# def ingresarproductos():
+#     con = Conexiondb()
+#     cur = con.cursor(cursor_factory=extras.RealDictCursor)
+#   #  cur.execute("SELECT * FROM VS_Auto")
+#    # autos = cur.fetchall()
+#     cur.close()
+#     con.close()    
+#     return render_template('app/ingresoprodadmin.html')
+
+@app.post('/dashboard/ingresarproducto')
+def ingresarusuarios():
+    return 'hola'
 
 #control de prueba para añadir productos desde el dashboard a la base
 @app.route('/dashboardadmin')
