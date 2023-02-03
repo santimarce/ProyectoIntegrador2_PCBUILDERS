@@ -76,6 +76,15 @@ def registro():
 def compras():
     return render_template('app/compras.html') 
 
+#ofertas
+@app.route('/ofertas')
+def ofertas():
+    return render_template('app/ofertas!.html') 
+
+#catalogo
+@app.route('/catalogo')
+def catalogo():
+    return render_template('app/catalogo.html') 
   
 # a partir de aquí generar sus rutas respectivas, para las páginas estáticas no hace falta agregar rutas siempre y cuando la indexacion
 # quede acorde a como se ha ordenado en las carpetas los html
