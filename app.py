@@ -86,6 +86,9 @@ def compras():
 def home():
     return render_template('index.html')
 
+@app.route('/dashboardadmin/datosCuriosos')
+def datosCuriosos():
+    return render_template('app/datosInformativos.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
