@@ -51,8 +51,8 @@
                             <a id="navopcion" class="nav-link dropdown-toggle" href="#" id="dropdownId"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Iniciar Sesion</a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="app/loginAdmin.html">Como administrador</a>
-                                <a class="dropdown-item" href="app/login.html">Como cliente</a>
+                                <a class="dropdown-item" href="{{ url_for('loginAdmin') }}">Como administrador</a>
+                                <a class="dropdown-item" href="{{ url_for('login') }}">Como cliente</a>
                             </div>
                         </div>
                     </div>
@@ -324,17 +324,19 @@
         <img src="web/img/marcas.PNG" alt="">
     </div>
     <br>
-<!-- Este es un boton de prueba -->
+<!-- Este es un boton de prueba 
 <div>
     <a href="{{ url_for('dashboardadmin') }}">Ir al dashboard</a>
 </div>
 <br>
-<!-- PRUEBA -->
-<!-- Este es un boton de prueba armar pc -->
+
+
 <div>
     <a href="{{ url_for('armarpc') }}">Ir armarpc</a>
 </div>
-<!-- PRUEBA -->
+ PRUEBA -->
+
+
 </body>
     <footer>
         <div class="container-footer-all">

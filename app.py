@@ -24,26 +24,57 @@ def Conexiondb():
 def ingresarproductos():
     return render_template('app/ingresoprodadmin.html')
 
-
 #control de prueba para añadir productos desde el dashboard a la base
 @app.route('/dashboardadmin')
 def dashboardadmin():
     return render_template('app/dashboard-admin.html')  
+
+#RUTAS-------------
 
 #armarpc
 @app.route('/armarpc')
 def armarpc():
     return render_template('app/armar.html')  
 
-#ruta login cliente
+#dashboard-admin
+@app.route('/dashboardAdmin')
+def dashboardAdmin():
+    return render_template('app/dashboard-admin.html/')
+
+#gestion de usuario
+@app.route('/gestiondeusuario')
+def gestiondeusuario():
+    return render_template('app/gestiondeusuario.html/')
+
+#dashboard
+@app.route('/dashboard')
+def dashboard():
+    return render_template('app/dashboard.html/')
+
+#login cliente
 @app.route('/login')
 def login():
-    return render_template('app/login.html')
+    return render_template('app/login.html/')
 
-#ruta login admin
+#login admin
 @app.route('/loginAdmin')
 def loginAdmin():
     return render_template('app/loginAdmin.html')  
+
+#pedidos
+@app.route('/pedidos')
+def pedidos():
+    return render_template('app/pedidos.html') 
+
+#registro
+@app.route('/registro')
+def registro():
+    return render_template('app/registro.html') 
+
+#compras
+@app.route('/compras')
+def compras():
+    return render_template('app/compras.html') 
 
   
 # a partir de aquí generar sus rutas respectivas, para las páginas estáticas no hace falta agregar rutas siempre y cuando la indexacion

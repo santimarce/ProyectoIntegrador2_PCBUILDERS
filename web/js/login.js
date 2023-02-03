@@ -64,7 +64,7 @@ function reg() {
             })
 
 
-            window.location.assign("login.html")
+            window.location.assign("/registro")
         })();
     } else {
         Swal.fire({
@@ -89,7 +89,7 @@ function loginx() {
                 icon: 'success',
                 width: '400px',
             });
-            window.location.assign("dashboard.html");
+            window.location.assign("/dashboard");
         })();
 
     } else {
@@ -117,7 +117,7 @@ function loginAd() {
                 icon: 'success',
                 width: '400px',
             });
-            window.location.assign("dashboard-admin.html");
+            window.location.assign("/dashboardAdmin");
         })();
     } else {
         Swal.fire({
@@ -132,5 +132,5 @@ function loginAd() {
 //CAMBIO DE DATOS
 function cambDatos() {
     alert("Datos cambiados correctamente")
-    window.location.assign("dashboard-admin.html")
+    window.location.assign("/dashboardAdmin")
 }
