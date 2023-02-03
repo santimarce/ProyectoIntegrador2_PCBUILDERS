@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto Integrador</title>
-    <link rel="stylesheet" href="../web/css/style.css">
+    <link rel="stylesheet" href="/web/css/armarPC.css">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
         <div class="container">
             <ul class="nav nav-pills nav-fill">
                 <li class="imgdashuser">
-                <a class="navbar-brand" href="#"><img src="../web/img/logo.png" alt="" width="150"
+                <a class="navbar-brand" href="#"><img src="/web/img/logo.png" alt="" width="150"
                         height="40"></a>
                 </li>
                 <li class="nav-item2">
@@ -39,194 +39,184 @@
         </div>
     </div>
 
-
-    <br>
-
-    <div class="container2">
-
-        <div class="row">
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        <img src="../web/img/procesador.png" alt=""><a href="#" class="dirigida1">Procesador</a>
-                    </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <strong>Es el componente más importante de tu nueva PC.</strong>
-                            <ul>
-                                <li><code>INTEL CORE I9-12900K 16 núcleos y 24 hilos</code><input type="radio" name="pro1" id="pro1"> </li>
-                                <li><code>INTEL CORE I7-12700KF 12 núcleos y 20 hilos</code><input type="radio" name="pro2" id="pro2"> </li>
-                                <li><code>AMD Ryzen 9 5950X</code><input type="radio" name="pro3" id="pro3"></li>
-                            </ul>
-                        </div>
-                    </div>
+    <br><center>
+        <div class="cuellobotella">
+            <h4 style="color: blue;">Si quieres saber que tanto cuello de botella hay entre dos componentes puedes entrar al siguiente enlace:
+                <a href="https://pc-builds.com/bottleneck-calculator/" target="_blank "><br><span class="badge bg-secondary">Cuello de botella</span></a></h4>
+        </div></center>
+        <br>
+        <div class="contarmarpc1" style="margin: 0px 50px 0px 100px;">
+            <div id="armrgbchato1" class="card" style="width: 20rem; float: left; margin: 0px 50px;">
+                <br>
+                <center><img src="/web/img/procesador.png" width="50px" height="50px"></center>
+                <div class="card-body">
+                    <h5 class="card-title">Procesador</h5>
+                    <p class="card-text">Es el componente más importante de tu nueva PC.</p>
+                    <select id="productosarm1" class="form-select" aria-label="Default select example">
+                        <option value="" selected disabled>Seleccione Algun procesador:</option>
+                        <option value="INTEL CORE I9-12900K 16 núcleos y 24 hilos - $799">INTEL CORE I9-12900K 16 núcleos y 24 hilos</option>
+                        <option value="INTEL CORE I7-12700KF 12 núcleos y 20 hilos - $370">INTEL CORE I7-12700KF 12 núcleos y 20 hilos</option>
+                        <option value="AMD Ryzen 9 5950X - $750">AMD Ryzen 9 5950X</option>
+                    </select>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        <img src="../web/img/tarjetaM.png" alt=""><a href="" class="dirigida1">Tarjeta Madre</a>
-                    </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <strong>De ella dependerá la comunicación de todos tus componentes.</strong>
-                            <ul>
-                                <li><code>Mainboard ROG STRIX Z690-F</code><input type="radio" name="tarM1" id="tarM1"></li>
-                                <li><code>Mainboard ROG STRIX Z690-A</code><input type="radio" name="tarM2" id="tarM2"></li>
-                                <li><code>Mainboard GIGABYTE X570</code><input type="radio" name="tarM3" id="tarM3"></li>
-                            </ul>
-                        </div>
-                    </div>
+            </div>
+    
+            <div id="armrgbchato2" class="card" style="width: 20rem; float: left; margin: 0px 50px;">
+                <br>
+                <center><img src="/web/img/tarjetaM.png" width="50px" height="50px"></center>
+                <div class="card-body">
+                    <h5 class="card-title">Tarjeta Madre</h5>
+                    <p class="card-text">De ella dependerá la comunicación de todos tus componentes.</p>
+                    <select id="productosarm2" class="form-select" aria-label="Default select example">
+                        <option value="" selected disabled>Seleccione una tarjeta madre:</option>
+                        <option value="INTEL CORE I9-12900K 16 núcleos y 24 hilos - $272">Mainboard ROG STRIX Z690-F</option>
+                        <option value="Mainboard ROG STRIX Z690-A - $439">Mainboard ROG STRIX Z690-A</option>
+                        <option value="Mainboard GIGABYTE X570 - 250">Mainboard GIGABYTE X570</option>
+                    </select>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        <img src="../web/img/MRam.png" alt=""><a href="" class="dirigida1"> Memoria Ram</a>
-                    </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <strong>Determinará la cantidad de pestañas de Google Chrome que podrás tener abiertas.</strong>
-                            <ul>
-                                <li><code>XPG RGB 32GB DDR5 5200MHZ</code><input type="radio" name="Ram1" id="Ram1"></li>
-                                <li><code>Kingston Fury Beast 16GB RGB 3200MHZ</code><input type="radio" name="Ram2" id="Ram2"></li>
-                                <li><code>Kinstom fury beast 64GB RGB 3200MHZ</code><input type="radio" name="Ram3" id="Ram3"></li>
-                            </ul>
-                        </div>
-                    </div>
+            </div>
+    
+            <div id="armrgbchato3" class="card" style="width: 20rem; float: left; margin: 0px 50px;">
+                <br>
+                <center><img src="/web/img/MRam.png" width="50px" height="50px"></center>
+                <div class="card-body">
+                    <h5 class="card-title">Memoria RAM</h5>
+                    <p class="card-text">Determinará la cantidad de pestañas y programas que podrás tener abiertas.</p>
+                    <select id="productosarm3" class="form-select" aria-label="Default select example">
+                        <option value="" selected disabled>Seleccione una memoria RAM:</option>
+                        <option value="XPG RGB 32GB DDR5 5200MHZ - $382">XPG RGB 32GB DDR5 5200MHZ</option>
+                        <option value="Kingston Fury Beast 16GB RGB 3200MHZ - $104">Kingston Fury Beast 16GB RGB 3200MHZ</option>
+                        <option value="Kingston fury beast 64GB RGB 3200MHZ - $234">Kingstom fury beast 64GB RGB 3200MHZ</option>
+                    </select>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFour">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        <img src="../web/img/GPU.png" alt=""><a href="" class="dirigida1">Tarjeta de video</a>
-                    </button>
-                    </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <strong>Si más FPSs quieres tener, la mejor tarjeta de video que puedas debes poner.</strong>
-                            <ul>
-                                <li><code>Zotac RTX 3080Ti Trinity 12GB GDDR6X</code><input type="radio" name="TarG1" id="TarG1"></li>
-                                <li><code>TUF GeForce RTX 30160 Ti</code><input type="radio" name="TarG2" id="TarG2"></li>
-                                <li><code>ASUS tuf GeForce RTX 3090 OC 24GB</code><input type="radio" name="TarG3" id="TarG3"></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFive">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                        <img src="../web/img/Unidad SSD.png" alt=""><a href="" class="dirigida1"> Unidad SSD</a>
-                    </button>
-                    </h2>
-                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <strong>Sin uno de estos tu PC será muuuuuy leeeenta….</strong>
-                            <ul>
-                                <li><code>Corsair 1TB NVMe PCie 4.0</code><input type="radio" name="SSD1" id="SSD1"></li>
-                                <li><code>Corsair 1TB PCie 4.0</code><input type="radio" name="SSD2" id="SSD2"></li>
-                                <li><code>Corsair MP600 core 1TB NVMe</code><input type="radio" name="SSD3" id="SSD3"></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingSix">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                        <img src="../web/img/fuente.png" alt=""><a href="" class="dirigida1">Fuente de poder</a>
-                    </button>
-                    </h2>
-                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <strong>Elije sabiamente, será quien proporcione la energía de toda tu PC.</strong>
-                            <ul>
-                                <li><code>Corsair RM1000X - 1000 watts</code><input type="radio" name="Fuente1" id="Fuente1"></li>
-                                <li><code>Corsair RM750x - 750 watss</code><input type="radio" name="Fuente2" id="Fuente2"></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingSeven">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
-                                    <img src="../web/img/case.png" alt="" width="50px" height="50px"><a href="#" class="dirigida1">Case o Caja</a>
-                                </button>
-                        </h2>
-                        <div id="collapseSeven" class="accordion-collapse collapse " aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <strong>Es la estructura metálica o plástica de tu PC.</strong>
-                                <ul>
-                                    <li><code>Corsair 7000X RGB ICUE</code><input type="radio" name="Case1" id="Case1"></li>
-                                    <li><code>CORSAIR 5000D AIRFLOW TEMPERED GLASS</code><input type="radio" name="Case2" id="Case2"></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingEight">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="fals" aria-controls="collapseEight">
-                                    <img src="../web/img/cooler.png" alt="" width="50px" height="50px"><a href=" " class="dirigida1">Cooler</a>
-                                </button>
-                        </h2>
-                        <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <strong>De el dependera la refrigeración de tu PC.</strong>
-                                <ul>
-                                    <li><code>Water cooler Corsair ICUE H150i RGB PRO XT</code><input type="radio" name="Cong1" id="Cong1"></li>
-                                    <li><code>Water cooler Corsair ICUE H100i elite RGB 2x 120mm</code><input type="radio" name="Cong2" id="Cong2"></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingNine">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-                                    <img src="../web/img/monitor.png" alt=" " width="50px" height="50px"><a href="" class="dirigida1">Monitor</a>
-                                </button>
-                        </h2>
-                        <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <strong>Para una mejor calidad visual.</strong>
-                                <ul>
-                                    <li><code>SAMSUNG serie T350 de 22 pulgadas FHD 1080p, 75 Hz, panel IPS, HDMI, VGA (D-Sub)</code><input type="radio" name="Monitor1" id="Monitor1"></li>
-                                    <li><code>SAMSUNG LED curvo de 24 pulgadas (diseño súper delgado), frecuencia de actualización de 60 Hz con modo de juego AMD FreeSync</code><input type="radio" name="Monitor2" id="Monitor2"></li>
-                                    <li><code>ASUS TUF Gaming 23.8» 1080P (VG249Q1R) - Full HD, IPS, 165 Hz (admite 144 Hz), 1 ms</code><input type="radio" name="Monitor3" id="Monitor3"></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <br><br></div>
-            <input type="button" value="ARMAR" onclick="Armarpc()" onmouseup="Mostrar()"><input type="reset" onclick="reload()" value="RESTABLECER">
+            </div>
         </div>
-        </form>
-    </div>
-    <img src="../web/img/PCGAMERCOMPONENETES.jpeg" alt="PC" id="PCGAMER" width="400px" height="410px">
-    <div class="PcCreada">
-        <h1>TU PC CONTENDRA LOS SIGUIENTES COMPONENTES :</h1>
-        <h3 id="componentes"></h3>
-        <h3 id="precio"></h3>
-    </div>
-    <div class="precios">
-        <h1>PRECIOS</h1>
-        <h3 id="preciosC"></h3>
-    </div>
+        
+        <div class="contarmarpc2" style="margin: 300px 50px 0px 100px;">
+            <div id="armrgbchato1" class="card" style="width: 20rem; float: left; margin: 0px 50px;">
+                <br>
+                <center><img src="/web/img/GPU.png" width="50px" height="50px"></center>
+                <div class="card-body">
+                    <h5 class="card-title">Tarjeta de video</h5>
+                    <p class="card-text">Si más FPS quieres tener, la mejor tarjeta de video que puedas debes obtener.</p>
+                    <select id="productosarm4" class="form-select" aria-label="Default select example">
+                        <option value="" selected disabled>Seleccione una tarjeta de video:</option>
+                        <option value="Zotac RTX 3080Ti Trinity 12GB GDDR6X - $854">Zotac RTX 3080Ti Trinity 12GB GDDR6X</option>
+                        <option value="TUF GeForce RTX 30160 Ti - $443">TUF GeForce RTX 30160 Ti</option>
+                        <option value="ASUS tuf GeForce RTX 3090 OC 24GB - $1224">ASUS tuf GeForce RTX 3090 OC 24GB</option>
+                    </select>
+                </div>
+            </div>
+    
+            <div id="armrgbchato2" class="card" style="width: 20rem; float: left; margin: 0px 50px;">
+                <br>
+                <center><img src="/web/img/Unidad SSD.png" width="50px" height="50px"></center>
+                <br>
+                <div class="card-body">
+                    <h5 class="card-title">Unidad SSD</h5>
+                    <p class="card-text">Sin uno de estos tu PC será muuuuuy leeeenta…</p>
+                    <select id="productosarm5" class="form-select" aria-label="Default select example">
+                        <option value="" selected disabled>Seleccione una tarjeta madre:</option>
+                        <option value="Corsair 1TB NVMe PCie 4.0 - $167">Corsair 1TB NVMe PCie 4.0</option>
+                        <option value="Corsair 1TB PCie 4.0 - $164">Corsair 1TB PCie 4.0</option>
+                        <option value="Corsair MP600 core 1TB NVMe - $165">Corsair MP600 core 1TB NVMe</option>
+                    </select>
+                </div>
+            </div>
+    
+            <div id="armrgbchato3" class="card" style="width: 20rem; float: left; margin: 0px 50px;">
+                <br>
+                <center><img src="/web/img/fuente.png" width="50px" height="50px"></center>
+                <br>
+                <div class="card-body">
+                    <h5 class="card-title">Fuente de poder</h5>
+                    <p class="card-text">Elije sabiamente, será quien proporcione la energía de toda tu PC.</p>
+                    <select id="productosarm6" class="form-select" aria-label="Default select example">
+                        <option value="" selected disabled>Seleccione su fuente de poder:</option>
+                        <option value="Corsair RM1000X - 1000 watts - $170">Corsair RM1000X - 1000 watts</option>
+                        <option value="Corsair RM750x - 750 watss - $177">Corsair RM750x - 750 watss</option>
+                        <option value="EVGA 700 Watts 80+ Bronze White - $89">EVGA 700 Watts 80+ Bronze White</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="contarmarpc3" style="margin: 300px 50px 600px 100px;">
+            <div id="armrgbchato1" class="card" style="width: 20rem; float: left; margin: 0px 50px;">
+                <br>
+                <center><img src="/web/img/case.png" width="75px" height="75px"></center>
+                <div class="card-body">
+                    <h5 class="card-title">Case o Caja</h5>
+                    <p class="card-text">Es la estructura metálica o plástica de tu PC.</p>
+                    <select id="productosarm7" class="form-select" aria-label="Default select example">
+                        <option value="" selected disabled>Seleccione un Case:</option>
+                        <option value="Corsair 7000X RGB ICUE - $300">Corsair 7000X RGB ICUE</option>
+                        <option value="CORSAIR 5000D AIRFLOW TEMPERED GLASS - $150">CORSAIR 5000D AIRFLOW TEMPERED GLASS</option>
+                        <option value="Case Gamer SATE K-881 - $175">Case Gamer SATE K-881</option>
+                    </select>
+                </div>
+            </div>
+    
+            <div id="armrgbchato2" class="card" style="width: 20rem; float: left; margin: 0px 50px;">
+                <br>
+                <center><img src="/web/img/cooler.png" width="75px" height="75px"></center>
+                <div class="card-body">
+                    <h5 class="card-title">Cooler</h5>
+                    <p class="card-text">De el dependera la refrigeración de tu PC.</p>
+                    <select id="productosarm8" class="form-select" aria-label="Default select example">
+                        <option value="" selected disabled>Seleccione un cooler:</option>
+                        <option value="Water cooler Corsair ICUE H150i RGB PRO XT - $180">Water cooler Corsair ICUE H150i RGB PRO XT</option>
+                        <option value="Water cooler Corsair ICUE H100i elite RGB 2x 120mm - $174">Water cooler Corsair ICUE H100i elite RGB 2x 120mm</option>
+                        <option value="COOLER MASTER MA610P RGB - $85">COOLER MASTER MA610P RGB</option>
+                    </select>
+                </div>
+            </div>
+    
+            <div id="armrgbchato3" class="card" style="width: 20rem; float: left; margin: 0px 50px;">
+                <br>
+                <center><img src="/web/img/monitor.png" width="75px" height="75px"></center>
+                <br>
+                <div class="card-body">
+                    <h5 class="card-title">Monitor</h5>
+                    <p class="card-text">Para una mejor calidad visual.</p>
+                    <select id="productosarm9" class="form-select" aria-label="Default select example">
+                        <option value="" selected disabled>Seleccione un monitor:</option>
+                        <option value="SAMSUNG serie T350 de 22 pulgadas FHD 1080p - $148">SAMSUNG serie T350 de 22 pulgadas FHD 1080p</option>
+                        <option value="SAMSUNG LED curvo de 24 pulgadas (diseño súper delgado) - $279">SAMSUNG LED curvo de 24 pulgadas (diseño súper delgado)</option>
+                        <option value="ASUS TUF Gaming 23.8» 1080P (VG249Q1R) - $190">ASUS TUF Gaming 23.8» 1080P (VG249Q1R)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <center>
+        <button id="armarpcya" class="ARPCEG">Armar Pc</button>
+        <button onclick="resetPage()" class="RSBCEG">Restablecer</button>
+        </center>
+    
+        <br><br>
+        <center>
+        <table id="seleccion-productos-tabla" style="display: none;" class="tablaArm">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody id="seleccion-productos-tabla-body">
+            </tbody>
+        </table>
+        </center>
+        <br><br>
 
-
-    </div>
-
-    <script src="../web/js/armar.js">
+    <script src="/web/js/armar.js">
     </script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <br>
 
 </body>
 
 <footer id="footer-armar">
-    <img src="../web/img/catalogo.PNG" alt=" ">
+    <img src="/web/img/catalogo.PNG" alt=" ">
 </footer>
 
 </html>
