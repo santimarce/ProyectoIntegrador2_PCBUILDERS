@@ -13,7 +13,7 @@ host = 'localhost'
 port = '5432' 
 dbname = 'NuevoProyectoIntegrador'
 username = 'postgres'
-password = '200494'
+password = 'Santi018'
 # host        = 'localhost'
 # port        = 5432
 # dbname      = 'usuarios'
@@ -54,15 +54,14 @@ def ingresarproducto():
 
 @app.get('/dashboard/getuserXD')
 def get_productos():
-    conn = get_connection()
-    cur = conn.cursor(cursor_factory=extras.RealDictCursor)
-
-    cur.execute('SELECT * FROM producto')
-    listadoProductos = cur.fetchall()
     usuario_idprd = session["usuario_id"]
-    cur.close()
     print(usuario_idprd)
-    return jsonify({"listadoProductos": listadoProductos, "usuario_idprd": usuario_idprd})
+    return jsonify(usuario_idprd)
+
+@app.get('/dashboard/pedidos/<cedula>')
+def pruebaxd():
+    s = "dato"
+    return jsonify(s)
 
 #dashboard-admin
 @app.route('/catalogo')

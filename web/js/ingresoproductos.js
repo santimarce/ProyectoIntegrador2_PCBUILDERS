@@ -3,7 +3,7 @@ const FormaIngresoProducto = document.querySelector("#FormaIngresoProd");
 const BtnVerProductos = document.getElementById('boton_mostrarproductos');
 var productonuevo = [];
 var productos = [];
-var idusuario;
+let idusuario;
 const diccionarioProductos = {
     "Laptop": "Pulgadas",
     "Desktop": "RGB",
@@ -26,13 +26,15 @@ const tipoCasilla = {
 window.addEventListener("DOMContentLoaded", async () => {
     fetch("/dashboard/getuserXD")
     .then(response => response.json())
-        .then(data => {
-            productos = data.listadoProductos;
-            idusuario = data.usuario_idpr;
-            console.log(data.usuario_idpr);
-        });
+    .then(data => pasaralimpio(data));
+
+    console.log(idusuario);
+
 });
 
+function pasaralimpio(datos){
+    idusuario= datos;
+}
 var ColumnaNew = document.getElementById("ColumnaNew");
 
 SelectorTipoProducto.addEventListener('change', (event) => {
