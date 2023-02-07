@@ -10,9 +10,9 @@ app.config['SECRET_KEY'] =  'usuarios'
 
 host = 'localhost'
 port = '5432' 
-dbname = 'ProyectoIntegrador2do'
+dbname = 'proyecto'
 username = 'postgres'
-password = 'Santi018'
+password = 'jennyfer18'
 # host        = 'localhost'
 # port        = 5432
 # dbname      = 'usuarios'
@@ -21,7 +21,7 @@ password = 'Santi018'
 
 def get_connection():
     conn = connect(host=host, port=port, dbname=dbname,
-                   username=username, password=password)
+                   user=username, password=password)
     return conn
 
 # Ingreso de productos a la base
@@ -106,18 +106,7 @@ def formLogin():
     else:
         return render_template('app/login.html/')
 
-#pedidos
-@app.route('/pedidos')
-def pedidos():
-    if "usuario_id" in session:
-        if session["nivelrol"] == 1:
-            return render_template('app/pedidos.html') 
-        elif session["nivelrol"] == 2:
-            return redirect('/')  
-        else:
-            return redirect("/formLogin")
-    else:
-        return redirect("/formLogin")
+
     
 
 #registro
@@ -294,6 +283,72 @@ def validate():
             return redirect("/")
     else:
         return redirect("/")
+    
+#PEDIDOS LIST GET
+@app.get('/dashboard/pedidos/<cedula>')
+def get_pedidos(cedula):
+    
+    conn = get_connection()
+    cur = conn.cursor(cursor_factory=extras.RealDictCursor)
+
+    cur.execute('SELECT pedido.* FROM pedido  WHERE id_clientes = %s', (cedula, ))
+    listaPedidos = cur.fetchall()
+
+    cur.close()
+    return jsonify(listaPedidos)  
+
+# @app.get('/dashboard/pedidos')
+# def get_pedidos():
+#     conn = get_connection()
+#     cur = conn.cursor(cursor_factory=extras.RealDictCursor)
+
+#     cur.execute('SELECT * FROM pedido' )
+#     listaPedidos = cur.fetchall()
+
+#     cur.close()
+#     return jsonify(listaPedidos)  
+
+@app.get('/dashboard/getuserXD')
+def get_llevarUsuario():
+    usuario_idprd = session["usuario_id"]
+    print(usuario_idprd)
+    return jsonify(usuario_idprd)
+
+#pedidos
+@app.route('/dashboard/pedidos')
+def pedidos():
+    if "usuario_id" in session:
+        if session["nivelrol"] == 1:
+            return render_template('app/pedidos.html') 
+        elif session["nivelrol"] == 2:
+            return redirect('/')  
+        else:
+            return redirect("/formLogin")
+    else:
+        return redirect("/formLogin")  
+
+#PEDIDOS LIST POST
+@app.post('/dashboard/pedidos')
+def create_pedido():
+    new_pedido    = request.get_json()
+    id_pedido     = new_pedido['id_pedido']
+    fechapedido   = new_pedido['fechapedido']
+    fechaentrega  = new_pedido['fechaentrega']
+    lugarentrega  = new_pedido['lugarentrega']
+    id_clientes   = new_pedido['id_clientes']
+    totalpedido   = new_pedido['totalpedido']
+
+    conn = get_connection()
+    cur = conn.cursor()
+    cur.execute('INSERT INTO pedido (id_pedido, fechapedido, fechaentrega, lugarentrega, id_clientes, totalpedido) VALUES (%s, %s, %s, %s, %s, %s) RETURNING *',
+                (id_pedido, fechapedido, fechaentrega, lugarentrega, id_clientes, totalpedido))
+    
+    new_pedido = cur.fetchone()
+    conn.commit()
+    cur.close()
+    conn.close()
+    return jsonify(new_pedido)
+
     
 @app.route('/logout')
 def logout():
