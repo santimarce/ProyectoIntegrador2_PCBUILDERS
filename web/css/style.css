@@ -1,10 +1,37 @@
 /* Todo el encabezado */
-#botonbuscar{
+#boton_enviardatosproductoingresar{
     background: black;
     color: white;
-    border: 6px groove rgb(151, 133, 216);
+    border: 4px groove rgb(151, 133, 216);
     border-radius: 6px;
+    padding: 5px 25px 5px 25px; 
+    margin: 5px 25px 5px 15px;
 }
+#boton_enviardatosproductoingresar:hover{
+    background: white;
+    color: black;
+    border: 4px groove black;
+    border-radius: 6px;
+    padding: 5px 25px 5px 25px; 
+    margin: 5px 25px 5px 15px;
+}
+#boton_mostrarproductos{
+    background: black;
+    color: white;
+    border: 4px groove rgb(151, 133, 216);
+    border-radius: 6px;
+    padding: 5px 25px 5px 25px; 
+    margin: 5px 25px 5px 15px;
+}
+#boton_mostrarproductos:hover{
+    background: white;
+    color: black;
+    border: 4px groove black;
+    border-radius: 6px;
+    padding: 5px 25px 5px 25px; 
+    margin: 5px 25px 5px 15px;
+}
+
 a{
     text-decoration: none !important;
 }
@@ -696,6 +723,7 @@ footer{
     font-size: 30px;
     color: rgb(255, 255, 255);
 }
+
 
 .contenedor-reg label {
     margin: 0;

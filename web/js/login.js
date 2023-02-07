@@ -13,6 +13,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
 formRegistro.addEventListener("submit", async (e) => {
   e.preventDefault();
+
   const cedula = formRegistro["cedula"].value;
   const correo = formRegistro["correo"].value;
   const nombres = formRegistro["nombres"].value;
@@ -20,6 +21,7 @@ formRegistro.addEventListener("submit", async (e) => {
   const callePrimaria = formRegistro["callePrimaria"].value;
   const calleSecundaria = formRegistro["calleSecundaria"].value;
   const contrasenia = formRegistro["contrasenia"].value;
+
 
   if (!editing) {
     // send user to backend
@@ -43,7 +45,7 @@ formRegistro.addEventListener("submit", async (e) => {
     usuarios.push(data);
     renderUser(usuarios);
   } else {
-    const response = await fetch(`/update/usuario/${usuarioId}`, {
+    const response = await fetch(`/updateUser/usuario/${usuarioId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -52,12 +54,12 @@ formRegistro.addEventListener("submit", async (e) => {
         cedula,
         correo,
         nombres,
-        fechaNacimiento,
         callePrimaria,
         calleSecundaria,
+        fechaNacimiento,
         contrasenia
       }),
-    });
+    });console.log(response);
     const usuarioActualizado = await response.json();
 
     usuarios = usuarios.map((usuario) =>
@@ -79,7 +81,7 @@ function renderUser(usuarios) {
     const userItem = document.createElement("tr");
     userItem.innerHTML = `
     <th scope="row">${usuario.cedula}</th>
-    <td><button class="btn-edit btn btn-info">Editar</button><button class="btn-delete btn btn-danger">Eliminar</button></td>
+    <td><button class="btn-edit btn btn-info">Editar</button>  <button class="btn-delete btn btn-danger">Eliminar</button></td>
     <td>${usuario.correo}</td>
     <td>${usuario.nombres}</td>
     <td>${usuario.fechanacimiento}</td>
@@ -109,11 +111,17 @@ function renderUser(usuarios) {
     const btnEdit = userItem.querySelector(".btn-edit");
 
     btnEdit.addEventListener("click", async (e) => {
-      const response = await fetch(`/update/usuario/${usuario.cedula}`);
+      const response = await fetch(`/getUser/usuario/${usuario.cedula}`);
       const data = await response.json();
+      console.log(data);
 
+      formRegistro["cedula"].value = data.cedula;
       formRegistro["correo"].value = data.correo;
       formRegistro["nombres"].value = data.nombres;
+      formRegistro["callePrimaria"].value = data.calleprimaria;
+      formRegistro["calleSecundaria"].value = data.callesecundaria;
+      formRegistro["contrasenia"].value = data.contrasenia
+
 
       editing = true;
       usuarioId = usuario.cedula;
