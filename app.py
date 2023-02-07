@@ -1,6 +1,5 @@
-from flask import Flask, render_template, request, jsonify, redirect, session, url_for
+from flask import Flask, render_template, request, jsonify, redirect, session, url_for, send_file
 from psycopg2 import connect, extras
-import hashlib
 
 app = Flask(__name__)
 # Cambio de nombre la carpeta por defecto llamada web para poder usar esa referencia de aquí en adelante
@@ -10,8 +9,8 @@ app.config['SECRET_KEY'] = 'usuarios'
 
 
 host = 'localhost'
-port = '5432'
-dbname = 'Prueba1'
+port = '5432' 
+dbname = 'ProyectoIntegrador2do'
 username = 'postgres'
 password = 'Santi018'
 # host        = 'localhost'
@@ -20,10 +19,9 @@ password = 'Santi018'
 # user        = 'postgres'
 # password    = 'password'
 
-
 def get_connection():
     conn = connect(host=host, port=port, dbname=dbname,
-                   user=username, password=password)
+                   username=username, password=password)
     return conn
 
 # Ingreso de productos a la base
@@ -34,48 +32,22 @@ def get_connection():
 #   #  cur.execute("SELECT * FROM VS_Auto")
 #    # autos = cur.fetchall()
 #     cur.close()
-#     con.close()
+#     con.close()    
 #     return render_template('app/ingresoprodadmin.html')
-@app.get('/dashboardAdmin/ingresarproducto')
-def ingresoproductos():
-    if "usuario_id" in session:
-        if session["nivelrol"] == 1:
-            return redirect('/')
-        elif session["nivelrol"] == 2:
-            return render_template('app/ingresoprodadmin.html')
-        else:
-            return redirect("/formLogin")
-    else:
-        return redirect("/formLogin")
 
+@app.post('/dashboard/ingresarproducto')
+def ingresarusuarios():
+    return 'hola'
 
-@app.route('/dashboardAdmin/ingresarproducto', methods =['POST'])
-def ingresarproductos():
-    if request.method == 'POST':
-        producto= request.get_json()
-        return jsonify(producto)
-    else: 
-        return redirect(url_for('ingresoproductos'))
-
-# ingresar el producto a la base
-
-
-# @app.post('/dashboard/ingresarproducto')
-# def ingresarproductosabase():
-#     nuevo_producto = request.get_json()
-#     return jsonify(nuevo_producto)
-
-# //////////////////////////////////////////RUTAS////////////////////////////////////////
-# armarpc
-
-
+#//////////////////////////////////////////RUTAS////////////////////////////////////////
+#armarpc
 @app.route('/armarpc')
 def armarpc():
     if "usuario_id" in session:
         if session["nivelrol"] == 1:
             return render_template('app/armar.html')
         elif session["nivelrol"] == 2:
-            return redirect('/')
+            return redirect('/dashboardAdmin')
         else:
             return redirect("/formLogin")
     else:
@@ -95,8 +67,7 @@ def dashboardAdmin():
     else:
         return redirect("/formLogin")
 
-# gestion de usuario
-
+#gestion de usuario
 @app.route('/gestiondeusuario')
 def gestiondeusuario():
     if "usuario_id" in session:
@@ -118,7 +89,7 @@ def dashboard():
         if session["nivelrol"] == 1:
             return render_template('app/dashboard.html/')
         elif session["nivelrol"] == 2:
-            return redirect('/')
+            return redirect('/')    
         else:
             return redirect("/formLogin")
     else:
@@ -139,16 +110,14 @@ def formLogin():
     else:
         return render_template('app/login.html/')
 
-# pedidos
-
-
+#pedidos
 @app.route('/pedidos')
 def pedidos():
     if "usuario_id" in session:
         if session["nivelrol"] == 1:
             return render_template('app/pedidos.html')
         elif session["nivelrol"] == 2:
-            return redirect('/')
+            return redirect('/')  
         else:
             return redirect("/formLogin")
     else:
@@ -163,17 +132,14 @@ def registro():
     else:
         return render_template('app/registro.html')
 
-
-# compras
-
-
+#compras
 @app.route('/compras')
 def compras():
     if "usuario_id" in session:
         if session["nivelrol"] == 1:
             return render_template('app/compras.html')
         elif session["nivelrol"] == 2:
-            return redirect('/')
+            return redirect('/') 
         else:
             return redirect("/formLogin")
     else:
@@ -184,14 +150,13 @@ def compras():
 def home():
     return render_template('index.html')
 
-
 @app.route('/datosCuriosos')
 def datosCuriosos():
     if "usuario_id" in session:
         if session["nivelrol"] == 2:
-            render_template('app/datosInformativos.html')
+            return render_template('app/datosInformativos.html/')
         elif session["nivelrol"] == 1:
-            return redirect('/')
+            return redirect('/') 
         else:
             return redirect("/formLogin")
     else:
@@ -203,7 +168,7 @@ def datosCuriosos():
 # para evitar que cambie las direcciones tal como lo haría con jinja2
 
 
-# Listar Usuarios
+#Listar Usuarios
 @app.get('/getList/usuarios')
 def get_usuarios():
     conn = get_connection()
@@ -227,16 +192,16 @@ def create_usuario():
     fechaNacimiento = new_usuario['fechaNacimiento']
     callePrimaria = new_usuario['callePrimaria']
     calleSecundaria = new_usuario['calleSecundaria']
-    esUsuario = new_usuario['esUsuario']
-    esAdmin = new_usuario['esAdmin']
-    contrasenia = hashlib.md5(new_usuario['contrasenia'].encode())
-    contrasenia = contrasenia.hexdigest()
+    esUsuario       = new_usuario['esUsuario']
+    esAdmin         = new_usuario['esAdmin']
+    contrasenia     = hashlib.md5(new_usuario['contrasenia'].encode())
+    contrasenia=contrasenia.hexdigest()
 
     conn = get_connection()
     cur = conn.cursor(cursor_factory=extras.RealDictCursor)
 
-    cur.execute('INSERT INTO usuario (cedula, correo, nombres, fechaNacimiento, callePrimaria, calleSecundaria, esUsuario, esAdmin, contrasenia) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING *',
-                (cedula, correo, nombres, fechaNacimiento, callePrimaria, calleSecundaria, esUsuario, esAdmin, contrasenia))
+    cur.execute('INSERT INTO usuario (cedula, correo, nombres, fechaNacimiento, callePrimaria, calleSecundaria, contrasenia) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING *',
+                (cedula, correo, nombres, fechaNacimiento, callePrimaria, calleSecundaria, contrasenia))
 
     new_usuario_creado = cur.fetchone()
     print(new_usuario_creado)
@@ -253,19 +218,19 @@ def create_usuario():
 def delete_usuario(cedula):
     conn = get_connection()
     cur = conn.cursor(cursor_factory=extras.RealDictCursor)
-    cur.execute(' DELETE FROM usuario WHERE cedula = %s RETURNING *', (cedula))
+    
+    cur.execute(' DELETE FROM usuario WHERE cedula = %s RETURNING *', (cedula,))
     usuario = cur.fetchone()
     conn.commit()
-    conn.close()
+    
     cur.close()
+    conn.close()
 
     if usuario is None:
         return jsonify({'message': 'Usuario no encontrado'}), 404
     return jsonify(usuario)
 
-# Actualizar usuario
-
-
+#Actualizar usuario
 @app.put('/update/usuario/<cedula>')
 def update_usuario(cedula):
     conn = get_connection()
@@ -277,13 +242,13 @@ def update_usuario(cedula):
     fechaNacimiento = new_usuario['fechaNacimiento']
     callePrimaria = new_usuario['callePrimaria']
     calleSecundaria = new_usuario['calleSecundaria']
-    esUsuario = new_usuario['esUsuario']
-    esAdmin = new_usuario['esAdmin']
-    nivelRol = new_usuario['nivelRol']
-    contrasenia = new_usuario['contrasenia']
+    esUsuario       = new_usuario['esUsuario']
+    esAdmin         = new_usuario['esAdmin']
+    nivelRol        = new_usuario['nivelRol']
+    contrasenia     = new_usuario['contrasenia']
 
-    cur.execute(' UPDATE usuario SET  correo = %s, nombres = %s, fechaNacimiento = %s, callePrimaria = %s, calleSecundaria = %s, esUsuario = %s, esAdmin = %s, nivelRol = %s, contrasenia = %s WHERE cedula = %s RETURNING *',
-                (correo, nombres, fechaNacimiento, callePrimaria, calleSecundaria, esUsuario, esAdmin, nivelRol, contrasenia, cedula))
+    cur.execute(' UPDATE usuario SET  correo = %s, nombres = %s, fechaNacimiento = %s, callePrimaria = %s, calleSecundaria = %s, contrasenia = %s WHERE cedula = %s RETURNING *',
+                (correo, nombres, fechaNacimiento, callePrimaria, calleSecundaria, contrasenia, cedula))
     update_user = cur.fetchone()
 
     conn.commit()
@@ -293,15 +258,13 @@ def update_usuario(cedula):
         return jsonify({'message': 'Usuario not found'}), 404
     return jsonify(update_user)
 
-# Listar usuario por cedula
-
-
+#Listar usuario por cedula
 @app.get('/get/usuario/<cedula>')
 def get_usuario(cedula):
     conn = get_connection()
     cur = conn.cursor(cursor_factory=extras.RealDictCursor)
 
-    cur.execute('SELECT * FROM usuario WHERE cedula = %s', (cedula))
+    cur.execute('SELECT * FROM usuario WHERE cedula = %s', (cedula,))
     usuario = cur.fetchone()
 
     if usuario is None:
@@ -330,7 +293,7 @@ def login():
             return redirect("/validateRoute")
         # En caso contrario, devolver un error
         else:
-            return "Usuario o contraseña incorrecta"
+            return redirect("/formLogin")
     return redirect("")
 
 
