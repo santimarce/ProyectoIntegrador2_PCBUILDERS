@@ -1,0 +1,263 @@
+----------------------------- Script para crear la database------------------
+
+CREATE DATABASE "NuevoProyectoIntegrador"
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Spanish_Spain.1252'
+    LC_CTYPE = 'Spanish_Spain.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = True;
+
+COMMENT ON DATABASE "NuevoProyectoIntegrador"
+    IS 'Base de datos del proyecto final segundo parcial.';
+
+
+------------------------------- Tablas----------------------------------
+
+	--/////////////////////// Tabla de productos /////////////////////--
+CREATE TABLE public.producto
+(
+    id_producto serial NOT NULL,
+    marca character varying(50) NOT NULL,
+    modelo character varying(50) NOT NULL,
+    precio money NOT NULL,
+    stock integer NOT NULL,
+    descripcion text,
+    extras character varying(255) NOT NULL,
+    foto bytea,
+    fecharegistro timestamp with time zone NOT NULL,
+    id_tipoproducto integer NOT NULL,
+    PRIMARY KEY (id_producto)
+);
+
+ALTER TABLE IF EXISTS public.producto
+    OWNER to postgres;
+
+COMMENT ON TABLE public.producto
+    IS 'Tabla de productos disponibles en stock con sus características principales';
+
+COMMENT ON COLUMN public.producto.id_producto
+    IS 'Código del producto asignado en la base';
+
+COMMENT ON COLUMN public.producto.marca
+    IS 'Marca del producto ingresado, solo se ingresan siglas de la marca si el nombre es largo (Advanced Micro Devices como AMD)';
+
+COMMENT ON COLUMN public.producto.modelo
+    IS 'El modelo de la tabla, debe ser el mostrado en la caja nombres cortos de preferencia sin referencias al pais de destino puesto por el fabricante.';
+
+COMMENT ON COLUMN public.producto.precio
+    IS 'Precio de venta SIN IVA';
+
+COMMENT ON COLUMN public.producto.descripcion
+    IS 'Guarda la descripción del producto que se ha ingresado, limitarse a escribir características técnicas con un orden predeterminado.';
+
+COMMENT ON COLUMN public.producto.extras
+    IS 'En este campo se ponen las características únicas de cada próducto que se usarán en el front para el apartado de armarpc, donde se debe tomar en cuenta temas únicos de cada tipo de componente. Ser extremadamente específicos dependiendo el tipo de producto unicamente especificar esos campos y la potencia que requiere.';
+
+COMMENT ON COLUMN public.producto.id_tipoproducto
+    IS 'Id del tipo de producto que se ingresa';
+
+
+	--/////////////////////// Tabla de tipo productos /////////////////////--
+
+CREATE TABLE IF NOT EXISTS public.tipoproducto
+(
+    id_tipoproducto integer NOT NULL UNIQUE,
+    nombre_tipoproducto character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT tipoproducto_pkey PRIMARY KEY (id_tipoproducto)
+);
+
+ALTER TABLE IF EXISTS public.tipoproducto
+    OWNER to postgres;
+
+COMMENT ON TABLE public.tipoproducto
+    IS 'Tabla de tipos de productos';
+
+COMMENT ON COLUMN public.tipoproducto.id_tipoproducto
+    IS 'Id del tipo de producto';
+
+COMMENT ON COLUMN public.tipoproducto.nombre_tipoproducto
+    IS 'Tipo de producto que se puede ingresar a la base';
+
+	--/////////////////////// Tabla de usuarios /////////////////////--
+
+
+CREATE TABLE IF NOT EXISTS public.usuario
+(
+    cedula character varying(10) COLLATE pg_catalog."default" NOT NULL,
+    correo character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    nombres character varying(75) COLLATE pg_catalog."default" NOT NULL,
+    fechanacimiento date NOT NULL,
+    fecharegistro date NOT NULL DEFAULT CURRENT_DATE,
+    calleprimaria character varying(85) COLLATE pg_catalog."default" NOT NULL,
+    callesecundaria character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    esusuario boolean NOT NULL DEFAULT true,
+    esadmin boolean NOT NULL DEFAULT false,
+    nivelrol integer NOT NULL DEFAULT 1,
+    contrasenia character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT usuario_pkey PRIMARY KEY (cedula)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.usuario
+    OWNER to postgres;
+
+COMMENT ON TABLE public.usuario
+    IS 'Tabla de usuarios del sistema
+';
+
+COMMENT ON COLUMN public.usuario.cedula
+    IS 'Numero de cedula del usuario para el ingreso a la sesion PK';
+
+COMMENT ON COLUMN public.usuario.correo
+    IS 'Correo del usuario, verificar la estructura del correo';
+
+COMMENT ON COLUMN public.usuario.nombres
+    IS 'Ingresa el nombre completo del usuario';
+
+COMMENT ON COLUMN public.usuario.fechanacimiento
+    IS 'Ingresa la fecha de nacimiennto en tipo date';
+
+COMMENT ON COLUMN public.usuario.fecharegistro
+    IS 'Ingresa la fecha de registro del usuario de preferencia directo de la base (autogenerado)';
+
+COMMENT ON COLUMN public.usuario.calleprimaria
+    IS 'Calle primaria de la direccion del usuario (usado para los pedidos)';
+
+COMMENT ON COLUMN public.usuario.callesecundaria
+    IS 'Calle secundaria de la direccion del usuario (usado para los pedidos)';
+
+COMMENT ON COLUMN public.usuario.esusuario
+    IS 'Usado en el back para verificar si es un cliente o no';
+
+COMMENT ON COLUMN public.usuario.esadmin
+    IS 'Usado en el back para verificar si es un administrador o no';
+
+COMMENT ON COLUMN public.usuario.nivelrol
+    IS 'Se puede alterar para cambiar los privilegios de un cliente o degradar a un administrador';
+
+COMMENT ON COLUMN public.usuario.contrasenia
+    IS 'Contrasenia que se ha creado el usuario';
+
+
+
+	--/////////////////////// Tabla de pedidos /////////////////////--
+
+CREATE TABLE IF NOT EXISTS public.pedido
+(
+    id_pedido serial NOT NULL,
+    fechapedido timestamp with time zone NOT NULL,
+    fechaentrega date NOT NULL,
+    lugarentrega character varying(200) COLLATE pg_catalog."default" NOT NULL,
+    totalpedido money NOT NULL,
+    id_clientes character varying(10) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT pedido_pkey PRIMARY KEY (id_pedido)
+);
+
+ALTER TABLE IF EXISTS public.pedido
+    OWNER to postgres;
+
+COMMENT ON TABLE public.pedido
+    IS 'Tabla de pedidos realizados';
+
+COMMENT ON COLUMN public.pedido.id_pedido
+    IS 'Identificador del pedido';
+
+COMMENT ON COLUMN public.pedido.fechapedido
+    IS 'Fecha en la cual se realizo el pedido por el usuario.';
+
+COMMENT ON COLUMN public.pedido.fechaentrega
+    IS 'Fecha calculada por el sistema aproximada de la entrega';
+
+COMMENT ON COLUMN public.pedido.lugarentrega
+    IS 'Indicaciones para la entrega del producto.';
+
+COMMENT ON COLUMN public.pedido.id_clientes
+    IS 'Referencia del cliente que realiza el pedido';
+
+
+
+	--/////////////////////// Tabla de pedidos productos /////////////////////--
+
+CREATE TABLE IF NOT EXISTS public.registropedidoproducto
+(
+    id_registropedidoprod serial NOT NULL,
+    id_pedido integer NOT NULL,
+    id_producto integer NOT NULL,
+    cantidadproductos smallint NOT NULL,
+    descripcionoproducto text COLLATE pg_catalog."default",
+    CONSTRAINT registropedidoproducto_pkey PRIMARY KEY (id_registropedidoprod)
+);
+
+ALTER TABLE IF EXISTS public.registropedidoproducto
+    OWNER to postgres;
+
+COMMENT ON TABLE public.registropedidoproducto
+    IS 'Tabla registro de pedidos y productos';
+
+COMMENT ON COLUMN public.registropedidoproducto.id_registropedidoprod
+    IS 'Identificador del numero registros pedido-productos';
+
+COMMENT ON COLUMN public.registropedidoproducto.id_pedido
+    IS 'Identificador del pedido';
+
+COMMENT ON COLUMN public.registropedidoproducto.id_producto
+    IS 'identificador del producto';
+
+COMMENT ON COLUMN public.registropedidoproducto.cantidadproductos
+    IS 'Cantidad de poductos seleccionados en el pedido';
+
+COMMENT ON COLUMN public.registropedidoproducto.descripcionoproducto
+    IS 'Descripcion opcional del producto';
+
+-------------------------------------Constraints-----------------------------------
+
+alter table producto
+add constraint fk_tipoproducto foreign key (id_tipoproducto)
+references tipoproducto(id_tipoproducto);
+
+alter table pedido
+add constraint fk_pedidoclientes foreign key (id_clientes)
+references usuario(cedula);
+
+alter table registropedidoproducto
+add constraint fk_pedidoproductopd FOREIGN KEY (id_pedido)
+REFERENCES pedido(id_pedido);
+
+alter table registropedidoproducto
+add CONSTRAINT fk_productoproductocl FOREIGN KEY (id_producto)
+REFERENCES producto (id_producto);
+
+
+
+----------------------------------Ingreso de datos---------------------------------
+
+--USUARIOS:
+
+insert into usuario (cedula, correo, nombres, fechaNacimiento, fecharegistro, callePrimaria, calleSecundaria, esUsuario, esAdmin, nivelrol, contrasenia) VALUES ('1234567890', 'admin@admin.com', 'Santiago VG','19/11/2000','12/05/2022','U','M',False,True,2,'123456');
+insert into usuario (cedula, correo, nombres, fechaNacimiento, fecharegistro, callePrimaria, calleSecundaria, esUsuario, esAdmin, nivelrol, contrasenia) VALUES ('0000000001', 'cliente@cliente.com', 'Santiago VG no ad','19/11/2000','16/03/2020','U','M',True,False,1,'123456');
+
+--TIPO PRODUCTOS:
+
+insert into tipoproducto (id_tipoproducto, nombre_tipoproducto) values (1, 'Procesador');
+insert into tipoproducto (id_tipoproducto, nombre_tipoproducto) values (2, 'Tarjeta Grafica');
+insert into tipoproducto (id_tipoproducto, nombre_tipoproducto) values (3, 'Memoria RAM');
+insert into tipoproducto (id_tipoproducto, nombre_tipoproducto) values (4, 'Mainboard');
+insert into tipoproducto (id_tipoproducto, nombre_tipoproducto) values (5, 'Laptop');
+insert into tipoproducto (id_tipoproducto, nombre_tipoproducto) values (6, 'Desktop');
+
+
+--PRODUCTOS:
+
+insert into producto (marca, modelo, precio, stock, descripcion, extras, fecharegistro, id_tipoproducto) values('HP','OMEN 16 desktopG',1600,2,'Algo good', 'True','12/05/2022',6);
+insert into producto (marca, modelo, precio, stock, descripcion, extras, fecharegistro, id_tipoproducto) values('ASUS', 'ROG STRIX 15',200,10,'Algo potente','20,DDR5,AM5,5,ATX','12/05/2022',4);
+
+
+
+-------------------------------CONSULTAS-----------------------------------------------------
+
+-- select * from p.producto
+

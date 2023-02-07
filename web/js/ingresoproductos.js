@@ -1,7 +1,9 @@
 const SelectorTipoProducto = document.getElementById("ComboTipoComponente");
 const FormaIngresoProducto = document.querySelector("#FormaIngresoProd");
+const BtnVerProductos = document.getElementById('boton_mostrarproductos');
 var productonuevo = [];
-
+var productos = [];
+var idusuario;
 const diccionarioProductos = {
     "Laptop": "Pulgadas",
     "Desktop": "RGB",
@@ -20,6 +22,16 @@ const tipoCasilla = {
     "number": ["Potencia Consumida", "Pulgadas", "Capacidad GB", "Puertos Expansion", "Generacion", "Nucleos", "Potencia Entrega"],
     "radio": ["RGB", "Wireless", "Wired",]
 }
+
+window.addEventListener("DOMContentLoaded", async () => {
+    fetch("/dashboard/getuserXD")
+    .then(response => response.json())
+        .then(data => {
+            productos = data.listadoProductos;
+            idusuario = data.usuario_idpr;
+            console.log(data.usuario_idpr);
+        });
+});
 
 var ColumnaNew = document.getElementById("ColumnaNew");
 
@@ -118,11 +130,5 @@ function verelemtnos() {
     for (var i = 0; i < FormaIngresoProducto.elements.length; i++) {
         var element = FormaIngresoProducto.elements[i];
         console.log(element.name + ": " + element.value);
-      }
-}
-w
-var asdasd = document.getElementById('');
-
-function  generaropciones() {
-    
+    }
 }

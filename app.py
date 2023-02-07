@@ -11,7 +11,7 @@ app.config['SECRET_KEY'] = 'usuarios'
 
 host = 'localhost'
 port = '5432' 
-dbname = 'ProyectoIntegrador2do'
+dbname = 'NuevoProyectoIntegrador'
 username = 'postgres'
 password = 'Santi018'
 # host        = 'localhost'
@@ -22,7 +22,7 @@ password = 'Santi018'
 
 def get_connection():
     conn = connect(host=host, port=port, dbname=dbname,
-                   username=username, password=password)
+                   user=username, password=password)
     return conn
 
 # Ingreso de productos a la base
@@ -37,9 +37,37 @@ def get_connection():
 #     return render_template('app/ingresoprodadmin.html')
 
 @app.post('/dashboard/ingresarproducto')
-def ingresarusuarios():
-    return 'hola'
+def ingresarproductos():
+    return render_template('app/ingresoprodadmin.html')
 
+@app.get('/dashboardAdmin/ingresarproducto')
+def ingresarproducto():
+    if "usuario_id" in session:
+        if session["nivelrol"] == 2:
+            return render_template('app/ingresoprodadmin.html/')
+        elif session["nivelrol"] == 1:
+            return redirect('/') 
+        else:
+            return redirect("/formLogin")
+    else:
+        return redirect("/formLogin")
+
+@app.get('/dashboard/getuserXD')
+def get_productos():
+    conn = get_connection()
+    cur = conn.cursor(cursor_factory=extras.RealDictCursor)
+
+    cur.execute('SELECT * FROM producto')
+    listadoProductos = cur.fetchall()
+    usuario_idprd = session["usuario_id"]
+    cur.close()
+    print(usuario_idprd)
+    return jsonify({"listadoProductos": listadoProductos, "usuario_idprd": usuario_idprd})
+
+#dashboard-admin
+@app.route('/catalogo')
+def catalogo():
+    return send_file('catalogo.pdf')
 #//////////////////////////////////////////RUTAS////////////////////////////////////////
 #armarpc
 @app.route('/armarpc')
