@@ -143,14 +143,14 @@ def formLogin():
 def pedidos():
     if "usuario_id" in session:
         if session["nivelrol"] == 1:
-            return render_template('app/pedidos.html')
+            return render_template('app/pedidos.html') 
         elif session["nivelrol"] == 2:
             return redirect('/')  
         else:
             return redirect("/formLogin")
     else:
         return redirect("/formLogin")
-
+    
 
 # registro
 @app.route('/registro')
@@ -336,8 +336,7 @@ def validate():
             return redirect("/")
     else:
         return redirect("/")
-
-
+    
 @app.route('/logout')
 def logout():
     session.clear()
