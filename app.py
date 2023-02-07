@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify, redirect, session, url_for, send_file
 from psycopg2 import connect, extras
+import hashlib
 
 app = Flask(__name__)
 # Cambio de nombre la carpeta por defecto llamada web para poder usar esa referencia de aquí en adelante
