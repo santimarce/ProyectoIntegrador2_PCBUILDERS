@@ -754,7 +754,11 @@ footer{
     background: linear-gradient(150deg, purple 20%, red, orange 65%, yellow , green, blue);
 }
 
-.bihouse{
+.biarmarpc{
+    color: #f33131;
+}
+
+/*.bihouse{
     color: purple;
 }
 .bicuenta{
@@ -763,7 +767,7 @@ footer{
 }
 .bicompra{
     color: rgb(227, 155, 22);
-}
+}*/
 .bipedidos{
     color: rgb(215, 215, 19);
     margin: 5px 0px 0px 0px;
@@ -771,7 +775,7 @@ footer{
 .biofer{
     color: purple;
 }
-.bicall{
+/*.bicall{
     color: rgb(193, 30, 30);
     margin: 10px 0px 0px 0px;
 }
@@ -782,7 +786,7 @@ footer{
 .biajustes{
     color: rgb(215, 215, 19);
     margin: 5px 0px 0px 0px;
-}
+}*/
 
 .nav-item2{
     margin: 20px 50px 0px 50px;
