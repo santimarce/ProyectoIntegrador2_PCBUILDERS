@@ -1,16 +1,17 @@
-from flask import Flask, render_template, request, jsonify, redirect, session
+from flask import Flask, render_template, request, jsonify, redirect, session, url_for
 from psycopg2 import connect, extras
 import hashlib
 
 app = Flask(__name__)
-app = Flask(__name__, static_folder='web')  #Cambio de nombre la carpeta por defecto llamada web para poder usar esa referencia de aquí en adelante
-app.config['SECRET_KEY'] =  'usuarios'
+# Cambio de nombre la carpeta por defecto llamada web para poder usar esa referencia de aquí en adelante
+app = Flask(__name__, static_folder='web')
+app.config['SECRET_KEY'] = 'usuarios'
 # Conexion a la base de datos estatica
 
 
 host = 'localhost'
-port = '5432' 
-dbname = 'ProyectoIntegrador2do'
+port = '5432'
+dbname = 'Prueba1'
 username = 'postgres'
 password = 'Santi018'
 # host        = 'localhost'
@@ -19,9 +20,10 @@ password = 'Santi018'
 # user        = 'postgres'
 # password    = 'password'
 
+
 def get_connection():
     conn = connect(host=host, port=port, dbname=dbname,
-                   username=username, password=password)
+                   user=username, password=password)
     return conn
 
 # Ingreso de productos a la base
@@ -32,15 +34,41 @@ def get_connection():
 #   #  cur.execute("SELECT * FROM VS_Auto")
 #    # autos = cur.fetchall()
 #     cur.close()
-#     con.close()    
+#     con.close()
 #     return render_template('app/ingresoprodadmin.html')
+@app.get('/dashboardAdmin/ingresarproducto')
+def ingresoproductos():
+    if "usuario_id" in session:
+        if session["nivelrol"] == 1:
+            return redirect('/')
+        elif session["nivelrol"] == 2:
+            return render_template('app/ingresoprodadmin.html')
+        else:
+            return redirect("/formLogin")
+    else:
+        return redirect("/formLogin")
 
-@app.post('/dashboard/ingresarproducto')
-def ingresarusuarios():
-    return 'hola'
 
-#//////////////////////////////////////////RUTAS////////////////////////////////////////
-#armarpc
+@app.route('/dashboardAdmin/ingresarproducto', methods =['POST'])
+def ingresarproductos():
+    if request.method == 'POST':
+        producto= request.get_json()
+        return jsonify(producto)
+    else: 
+        return redirect(url_for('ingresoproductos'))
+
+# ingresar el producto a la base
+
+
+# @app.post('/dashboard/ingresarproducto')
+# def ingresarproductosabase():
+#     nuevo_producto = request.get_json()
+#     return jsonify(nuevo_producto)
+
+# //////////////////////////////////////////RUTAS////////////////////////////////////////
+# armarpc
+
+
 @app.route('/armarpc')
 def armarpc():
     if "usuario_id" in session:
@@ -52,9 +80,9 @@ def armarpc():
             return redirect("/formLogin")
     else:
         return redirect("/formLogin")
-    
 
-#dashboard-admin
+
+# dashboard-admin
 @app.route('/dashboardAdmin')
 def dashboardAdmin():
     if "usuario_id" in session:
@@ -67,7 +95,8 @@ def dashboardAdmin():
     else:
         return redirect("/formLogin")
 
-#gestion de usuario
+# gestion de usuario
+
 @app.route('/gestiondeusuario')
 def gestiondeusuario():
     if "usuario_id" in session:
@@ -80,47 +109,53 @@ def gestiondeusuario():
     else:
         return redirect("/formLogin")
 
-#dashboard
+# dashboard
+
+
 @app.route('/dashboard')
 def dashboard():
     if "usuario_id" in session:
         if session["nivelrol"] == 1:
             return render_template('app/dashboard.html/')
         elif session["nivelrol"] == 2:
-            return redirect('/')    
+            return redirect('/')
         else:
             return redirect("/formLogin")
     else:
         return redirect("/formLogin")
 
-#login cliente
+# login cliente
+
+
 @app.route('/formLogin')
 def formLogin():
     if "usuario_id" in session:
         if session["nivelrol"] == 1:
             return redirect('/dashboard')
         elif session["nivelrol"] == 2:
-            return redirect('/dashboardAdmin')    
+            return redirect('/dashboardAdmin')
         else:
             return redirect("/")
     else:
         return render_template('app/login.html/')
 
-#pedidos
+# pedidos
+
+
 @app.route('/pedidos')
 def pedidos():
     if "usuario_id" in session:
         if session["nivelrol"] == 1:
-            return render_template('app/pedidos.html') 
+            return render_template('app/pedidos.html')
         elif session["nivelrol"] == 2:
-            return redirect('/')  
+            return redirect('/')
         else:
             return redirect("/formLogin")
     else:
         return redirect("/formLogin")
-    
 
-#registro
+
+# registro
 @app.route('/registro')
 def registro():
     if "usuario_id" in session:
@@ -128,22 +163,27 @@ def registro():
     else:
         return render_template('app/registro.html')
 
-#compras
+
+# compras
+
+
 @app.route('/compras')
 def compras():
     if "usuario_id" in session:
         if session["nivelrol"] == 1:
             return render_template('app/compras.html')
         elif session["nivelrol"] == 2:
-            return redirect('/') 
+            return redirect('/')
         else:
             return redirect("/formLogin")
     else:
         return redirect("/formLogin")
 
+
 @app.route('/')
 def home():
     return render_template('index.html')
+
 
 @app.route('/datosCuriosos')
 def datosCuriosos():
@@ -151,19 +191,19 @@ def datosCuriosos():
         if session["nivelrol"] == 2:
             render_template('app/datosInformativos.html')
         elif session["nivelrol"] == 1:
-            return redirect('/') 
+            return redirect('/')
         else:
             return redirect("/formLogin")
     else:
         return redirect("/formLogin")
-  
+
 # a partir de aquí generar sus rutas respectivas, para las páginas estáticas no hace falta agregar rutas siempre y cuando la indexacion
 # quede acorde a como se ha ordenado en las carpetas los html
 # si alguna ruta no redirige porfavort verificar, usar render_template en vez de send_file en lo posible
 # para evitar que cambie las direcciones tal como lo haría con jinja2
 
 
-#Listar Usuarios
+# Listar Usuarios
 @app.get('/getList/usuarios')
 def get_usuarios():
     conn = get_connection()
@@ -175,20 +215,22 @@ def get_usuarios():
     cur.close()
     return jsonify(listadoUsuarios)
 
-#Registrar Usuarios
+# Registrar Usuarios
+
+
 @app.post('/save/usuario')
 def create_usuario():
-    new_usuario     = request.get_json()
-    cedula          = new_usuario['cedula']
-    correo          = new_usuario['correo']
-    nombres         = new_usuario['nombres']
+    new_usuario = request.get_json()
+    cedula = new_usuario['cedula']
+    correo = new_usuario['correo']
+    nombres = new_usuario['nombres']
     fechaNacimiento = new_usuario['fechaNacimiento']
-    callePrimaria   = new_usuario['callePrimaria']
+    callePrimaria = new_usuario['callePrimaria']
     calleSecundaria = new_usuario['calleSecundaria']
-    esUsuario       = new_usuario['esUsuario']
-    esAdmin         = new_usuario['esAdmin']
-    contrasenia     = hashlib.md5(new_usuario['contrasenia'].encode())
-    contrasenia=contrasenia.hexdigest()
+    esUsuario = new_usuario['esUsuario']
+    esAdmin = new_usuario['esAdmin']
+    contrasenia = hashlib.md5(new_usuario['contrasenia'].encode())
+    contrasenia = contrasenia.hexdigest()
 
     conn = get_connection()
     cur = conn.cursor(cursor_factory=extras.RealDictCursor)
@@ -204,7 +246,9 @@ def create_usuario():
 
     return jsonify(new_usuario_creado)
 
-#Eliminar usuarios
+# Eliminar usuarios
+
+
 @app.delete('/delete/usuario/<cedula>')
 def delete_usuario(cedula):
     conn = get_connection()
@@ -219,22 +263,24 @@ def delete_usuario(cedula):
         return jsonify({'message': 'Usuario no encontrado'}), 404
     return jsonify(usuario)
 
-#Actualizar usuario
+# Actualizar usuario
+
+
 @app.put('/update/usuario/<cedula>')
 def update_usuario(cedula):
     conn = get_connection()
     cur = conn.cursor(cursor_factory=extras.RealDictCursor)
     new_usuario = request.get_json()
-    cedula          = new_usuario['cedula']
-    correo          = new_usuario['correo']
-    nombres         = new_usuario['nombres']
-    fechaNacimiento = new_usuario['fechaNacimiento']    
-    callePrimaria   = new_usuario['callePrimaria']
+    cedula = new_usuario['cedula']
+    correo = new_usuario['correo']
+    nombres = new_usuario['nombres']
+    fechaNacimiento = new_usuario['fechaNacimiento']
+    callePrimaria = new_usuario['callePrimaria']
     calleSecundaria = new_usuario['calleSecundaria']
-    esUsuario       = new_usuario['esUsuario']
-    esAdmin         = new_usuario['esAdmin']
-    nivelRol        = new_usuario['nivelRol']
-    contrasenia     = new_usuario['contrasenia']
+    esUsuario = new_usuario['esUsuario']
+    esAdmin = new_usuario['esAdmin']
+    nivelRol = new_usuario['nivelRol']
+    contrasenia = new_usuario['contrasenia']
 
     cur.execute(' UPDATE usuario SET  correo = %s, nombres = %s, fechaNacimiento = %s, callePrimaria = %s, calleSecundaria = %s, esUsuario = %s, esAdmin = %s, nivelRol = %s, contrasenia = %s WHERE cedula = %s RETURNING *',
                 (correo, nombres, fechaNacimiento, callePrimaria, calleSecundaria, esUsuario, esAdmin, nivelRol, contrasenia, cedula))
@@ -247,7 +293,9 @@ def update_usuario(cedula):
         return jsonify({'message': 'Usuario not found'}), 404
     return jsonify(update_user)
 
-#Listar usuario por cedula
+# Listar usuario por cedula
+
+
 @app.get('/get/usuario/<cedula>')
 def get_usuario(cedula):
     conn = get_connection()
@@ -260,16 +308,18 @@ def get_usuario(cedula):
         return jsonify({'message': 'Usuario not found'}), 404
     return jsonify(usuario)
 
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        #Recibir los datos del formulario
-        cedula      = request.form["cedula"]
+        # Recibir los datos del formulario
+        cedula = request.form["cedula"]
         contrasenia = request.form["contrasenia"]
 
-        conn    = get_connection()
-        cursor  = conn.cursor()
-        cursor.execute("SELECT * FROM usuario WHERE cedula=%s AND contrasenia=%s", (cedula, contrasenia))
+        conn = get_connection()
+        cursor = conn.cursor()
+        cursor.execute(
+            "SELECT * FROM usuario WHERE cedula=%s AND contrasenia=%s", (cedula, contrasenia))
         usuario = cursor.fetchone()
         cursor.close()
 
@@ -282,7 +332,8 @@ def login():
         else:
             return "Usuario o contraseña incorrecta"
     return redirect("")
-    
+
+
 @app.route('/validateRoute')
 def validate():
     if "usuario_id" in session:
@@ -294,11 +345,13 @@ def validate():
             return redirect("/")
     else:
         return redirect("/")
-    
+
+
 @app.route('/logout')
 def logout():
     session.clear()
     return redirect('/')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
