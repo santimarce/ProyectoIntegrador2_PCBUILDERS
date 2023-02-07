@@ -13,7 +13,7 @@ host = 'localhost'
 port = '5432' 
 dbname = 'ProyectoIntegrador2do'
 username = 'postgres'
-password = 'Santi018'
+password = '200494'
 # host        = 'localhost'
 # port        = 5432
 # dbname      = 'usuarios'
@@ -22,7 +22,7 @@ password = 'Santi018'
 
 def get_connection():
     conn = connect(host=host, port=port, dbname=dbname,
-                   username=username, password=password)
+                   user=username, password=password)
     return conn
 
 # Ingreso de productos a la base
@@ -315,6 +315,18 @@ def validate():
 def logout():
     session.clear()
     return redirect('/')
+
+# Armar pc Crud
+@app.get('/dasboard/armarPc')
+def armar_inicio():
+    conn = get_connection()
+    cur = conn.cursor(cursor_factory=extras.RealDictCursor)
+
+    cur.execute('SELECT producto.marca||producto.modelo||producto.extras as army, tipoproducto.id_tipoproducto, producto.precio FROM producto, tipoproducto where producto.id_tipoproducto=tipoproducto.id_tipoproducto ')
+    listadoProductos = cur.fetchall()
+
+    cur.close()
+    return jsonify(listadoProductos)
 
 
 if __name__ == '__main__':
